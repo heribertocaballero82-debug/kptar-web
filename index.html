@@ -3,24 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Kptar App C.A. — Ecosistema Venture Builder tecnológico en Latinoamérica. Diseñamos, construimos y escalamos arquitecturas SaaS multitenant conectadas a una infraestructura en la nube ultra-eficiente." />
-  <meta name="keywords" content="Kptar, PWA, SaaS, Venture Builder, Latinoamérica, software, tecnología, Supabase, aplicaciones empresariales" />
+  <meta name="description" content="Kptar App C.A. — Empresa de tecnología y consultora de ingeniería de software de alto nivel. Diseñamos, desarrollamos y escalamos plataformas SaaS multitenant, aplicaciones móviles nativas y soluciones con IA." />
+  <meta name="keywords" content="Kptar, Ingeniería de Software, Desarrollo de Software, SaaS, PWA, Apps Móviles, Inteligencia Artificial, Latinoamérica, Supabase, Consultoría Tecnológica" />
   <meta name="author" content="Kptar App C.A." />
-  <meta property="og:title" content="Kptar App C.A. — Acelerando el Futuro Digital de Latinoamérica" />
-  <meta property="og:description" content="Ecosistema unificado de software y Progressive Web Applications de alto impacto en Latinoamérica." />
+  <meta property="og:title" content="Kptar App C.A. — Ingeniería de Software de Alto Nivel para Proyectos Ambiciosos" />
+  <meta property="og:description" content="Diseñamos, desarrollamos y escalamos plataformas SaaS multitenant, aplicaciones móviles nativas y soluciones con Inteligencia Artificial." />
   <meta property="og:type" content="website" />
-  <title>Kptar App C.A. — Acelerando el Futuro Digital de Latinoamérica</title>
+  <title>Kptar App C.A. — Ingeniería de Software de Alto Nivel</title>
 
   <!-- PWA Manifest & Icons -->
   <link rel="manifest" href="manifest.json" />
   <link rel="apple-touch-icon" href="assets/kptar-logo.png" />
-  <meta name="theme-color" content="#F47C20" />
+  <meta name="theme-color" content="#060911" />
 
-
-  <!-- Google Fonts: Outfit -->
+  <!-- Google Fonts: Outfit (Display), Plus Jakarta Sans (Body/UI), JetBrains Mono (Technical/Metrics) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -28,28 +27,25 @@
     tailwind.config = {
       theme: {
         extend: {
-          fontFamily: { outfit: ['Outfit', 'sans-serif'] },
+          fontFamily: {
+            outfit: ['Outfit', 'sans-serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
           colors: {
+            obsidian: {
+              950: '#04060C',
+              900: '#060911',
+              800: '#0B101B',
+              700: '#0F1626',
+              600: '#161F33',
+            },
             brand: {
               orange: '#F47C20',
-              cyan:   '#1BB8D8',
-              dark:   '#0B0F19',
-              card:   '#111827',
-              glass:  'rgba(255,255,255,0.04)',
+              orangeLight: '#FF9E44',
+              cyan: '#1BB8D8',
+              cyanLight: '#5CE1FF',
             }
-          },
-          animation: {
-            'fade-up':    'fadeUp 0.7s ease forwards',
-            'pulse-slow': 'pulse 4s cubic-bezier(0.4,0,0.6,1) infinite',
-            'float':      'float 6s ease-in-out infinite',
-            'shimmer':    'shimmer 2.5s linear infinite',
-            'glow-pulse': 'glowPulse 3s ease-in-out infinite',
-          },
-          keyframes: {
-            fadeUp:    { '0%': { opacity:0, transform:'translateY(30px)' }, '100%': { opacity:1, transform:'translateY(0)' } },
-            float:     { '0%,100%': { transform:'translateY(0px)' }, '50%': { transform:'translateY(-12px)' } },
-            shimmer:   { '0%': { backgroundPosition:'-200% 0' }, '100%': { backgroundPosition:'200% 0' } },
-            glowPulse: { '0%,100%': { boxShadow:'0 0 20px rgba(244,124,32,0.3)' }, '50%': { boxShadow:'0 0 40px rgba(244,124,32,0.6), 0 0 80px rgba(27,184,216,0.2)' } },
           }
         }
       }
@@ -58,936 +54,1355 @@
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { font-family: 'Outfit', sans-serif; background-color: #0B0F19; color: #E5E7EB; scroll-behavior: smooth; }
+    html {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #060911;
+      color: #E2E8F0;
+      scroll-behavior: smooth;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    body {
+      background-color: #060911;
+      overflow-x: hidden;
+    }
+
+    /* Custom Scrollbar */
     ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: #0B0F19; }
-    ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #F47C20, #1BB8D8); border-radius: 3px; }
-    ::selection { background: rgba(244,124,32,0.3); color: #fff; }
+    ::-webkit-scrollbar-track { background: #060911; }
+    ::-webkit-scrollbar-thumb { background: #1E293B; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #F47C20; }
+    ::selection { background: rgba(244, 124, 32, 0.28); color: #ffffff; }
 
-    .glass {
-      background: rgba(255,255,255,0.04);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-    .glass-card {
-      background: rgba(17,24,39,0.6);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(255,255,255,0.07);
-      transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
-    }
-    .glass-card:hover {
-      background: rgba(17,24,39,0.85);
-      border-color: rgba(244,124,32,0.3);
-      transform: translateY(-6px);
-      box-shadow: 0 20px 60px rgba(244,124,32,0.12), 0 0 0 1px rgba(244,124,32,0.15), inset 0 1px 0 rgba(255,255,255,0.08);
-    }
-    .glass-card-cyan:hover {
-      border-color: rgba(27,184,216,0.4) !important;
-      box-shadow: 0 20px 60px rgba(27,184,216,0.15), 0 0 0 1px rgba(27,184,216,0.2), inset 0 1px 0 rgba(255,255,255,0.08) !important;
+    /* Architectural Background Grid & Ambient Lighting */
+    .bg-grid-pattern {
+      background-size: 48px 48px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+      mask-image: radial-gradient(ellipse 80% 70% at 50% 35%, #000 30%, transparent 100%);
+      -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 35%, #000 30%, transparent 100%);
     }
 
-    .gradient-text {
-      background: linear-gradient(135deg, #F47C20 0%, #FFB347 40%, #1BB8D8 80%, #00E5FF 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .gradient-text-orange {
-      background: linear-gradient(90deg, #F47C20, #FFB347);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .gradient-text-cyan {
-      background: linear-gradient(90deg, #1BB8D8, #00E5FF);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .hero-bg {
+    .hero-surface {
       background:
-        radial-gradient(ellipse 80% 60% at 10% 20%, rgba(244,124,32,0.08) 0%, transparent 60%),
-        radial-gradient(ellipse 60% 80% at 90% 80%, rgba(27,184,216,0.07) 0%, transparent 60%),
-        radial-gradient(ellipse 40% 40% at 50% 50%, rgba(244,124,32,0.04) 0%, transparent 70%),
-        #0B0F19;
+        radial-gradient(ellipse 65% 50% at 50% -10%, rgba(244, 124, 32, 0.11) 0%, transparent 65%),
+        radial-gradient(ellipse 55% 45% at 85% 25%, rgba(27, 184, 216, 0.08) 0%, transparent 65%),
+        radial-gradient(ellipse 50% 40% at 15% 60%, rgba(244, 124, 32, 0.04) 0%, transparent 60%),
+        #060911;
     }
 
-    #circuit-canvas { position:absolute; inset:0; pointer-events:none; opacity:0.6; }
-
-    .btn-primary {
-      position: relative;
-      overflow: hidden;
-      background: linear-gradient(135deg, #F47C20 0%, #D96A10 100%);
-      color: #fff;
-      font-weight: 700;
-      font-family: 'Outfit', sans-serif;
-      padding: 14px 36px;
-      border-radius: 50px;
-      border: none;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      font-size: 16px;
-      letter-spacing: 0.3px;
-      box-shadow: 0 4px 20px rgba(244,124,32,0.35);
-      text-decoration: none;
-      display: inline-block;
-      text-align: center;
-    }
-    .btn-primary::before {
-      content: '';
+    #circuit-canvas {
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, rgba(255,255,255,0.2), transparent 60%);
-      opacity: 0;
-      transition: opacity 0.3s;
+      pointer-events: none;
+      opacity: 0.45;
     }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(244,124,32,0.55), 0 0 60px rgba(244,124,32,0.2); }
-    .btn-primary:hover::before { opacity: 1; }
 
-    .btn-secondary {
-      position: relative;
-      overflow: hidden;
-      background: transparent;
-      color: #1BB8D8;
-      font-weight: 600;
-      font-family: 'Outfit', sans-serif;
-      padding: 13px 36px;
-      border-radius: 50px;
-      border: 1.5px solid rgba(27,184,216,0.5);
-      cursor: pointer;
-      transition: all 0.3s ease;
-      font-size: 16px;
-      letter-spacing: 0.3px;
-      text-decoration: none;
-      display: inline-block;
-      text-align: center;
+    /* Floating Navbar Capsule */
+    .nav-capsule {
+      background: rgba(11, 16, 27, 0.75);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow:
+        0 16px 40px -12px rgba(0, 0, 0, 0.65),
+        inset 0 1px 0 0 rgba(255, 255, 255, 0.11);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .btn-secondary:hover {
-      background: rgba(27,184,216,0.08);
-      border-color: #1BB8D8;
-      box-shadow: 0 0 30px rgba(27,184,216,0.25), inset 0 0 20px rgba(27,184,216,0.05);
-      transform: translateY(-2px);
+    .nav-capsule.scrolled {
+      background: rgba(6, 9, 17, 0.90);
+      border-color: rgba(255, 255, 255, 0.11);
+      box-shadow:
+        0 20px 50px -10px rgba(0, 0, 0, 0.8),
+        inset 0 1px 0 0 rgba(255, 255, 255, 0.14);
     }
 
     .nav-link {
       position: relative;
-      color: rgba(229,231,235,0.7);
+      color: #94A3B8;
       font-weight: 500;
-      font-size: 14px;
-      letter-spacing: 0.3px;
-      transition: color 0.3s;
-      padding: 4px 0;
+      font-size: 13.5px;
+      letter-spacing: -0.01em;
+      padding: 6px 12px;
+      border-radius: 8px;
+      transition: all 0.25s ease;
       text-decoration: none;
     }
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      bottom: -2px; left: 0;
-      width: 0; height: 2px;
-      background: linear-gradient(90deg, #F47C20, #1BB8D8);
-      transition: width 0.3s ease;
-      border-radius: 2px;
-    }
-    .nav-link:hover { color: #fff; }
-    .nav-link:hover::after { width: 100%; }
-
-    .tech-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(27,184,216,0.08);
-      border: 1px solid rgba(27,184,216,0.2);
-      color: #1BB8D8;
-      font-size: 12px;
-      font-weight: 600;
-      padding: 5px 12px;
-      border-radius: 20px;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      transition: all 0.3s ease;
-    }
-    .tech-badge:hover {
-      background: rgba(27,184,216,0.15);
-      border-color: rgba(27,184,216,0.4);
-      box-shadow: 0 0 15px rgba(27,184,216,0.2);
+    .nav-link:hover {
+      color: #F8FAFC;
+      background: rgba(255, 255, 255, 0.04);
     }
 
-    .section-bg-orange { background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(244,124,32,0.06) 0%, transparent 70%), #0B0F19; }
-    .section-bg-cyan   { background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(27,184,216,0.06) 0%, transparent 70%), #0B0F19; }
-
-    .divider {
-      height: 1px;
-      background: linear-gradient(90deg, transparent 0%, rgba(244,124,32,0.3) 30%, rgba(27,184,216,0.3) 70%, transparent 100%);
-    }
-
-    .icon-wrap-orange {
-      width: 56px; height: 56px; border-radius: 14px;
-      background: linear-gradient(135deg, rgba(244,124,32,0.2), rgba(244,124,32,0.05));
-      border: 1px solid rgba(244,124,32,0.25);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 24px; flex-shrink: 0; transition: all 0.3s;
-    }
-    .glass-card:hover .icon-wrap-orange {
-      background: linear-gradient(135deg, rgba(244,124,32,0.35), rgba(244,124,32,0.1));
-      box-shadow: 0 0 20px rgba(244,124,32,0.3);
-    }
-    .icon-wrap-cyan {
-      width: 56px; height: 56px; border-radius: 14px;
-      background: linear-gradient(135deg, rgba(27,184,216,0.2), rgba(27,184,216,0.05));
-      border: 1px solid rgba(27,184,216,0.25);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 24px; flex-shrink: 0; transition: all 0.3s;
-    }
-    .glass-card:hover .icon-wrap-cyan {
-      background: linear-gradient(135deg, rgba(27,184,216,0.35), rgba(27,184,216,0.1));
-      box-shadow: 0 0 20px rgba(27,184,216,0.3);
-    }
-
-    .pillar-card {
-      background: rgba(17,24,39,0.5);
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 20px;
-      padding: 32px;
-      transition: all 0.4s ease;
+    /* Enterprise Surface Cards & Specular Hairlines */
+    .surface-card {
       position: relative;
+      background: linear-gradient(180deg, rgba(15, 22, 38, 0.75) 0%, rgba(11, 16, 27, 0.9) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      box-shadow:
+        0 10px 30px -10px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 0 rgba(255, 255, 255, 0.09);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
       overflow: hidden;
     }
-    .pillar-card::before {
+    .surface-card::before {
       content: '';
       position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, #F47C20, transparent);
-      opacity: 0;
-      transition: opacity 0.4s;
+      top: 0; left: 15%; right: 15%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.22), transparent);
+      opacity: 0.6;
+      transition: opacity 0.3s ease, background 0.3s ease;
+      pointer-events: none;
     }
-    .pillar-card:hover { transform: translateY(-4px); border-color: rgba(244,124,32,0.2); box-shadow: 0 16px 48px rgba(0,0,0,0.4), 0 0 30px rgba(244,124,32,0.08); }
-    .pillar-card:hover::before { opacity: 1; }
-    .pillar-card.cyan::before { background: linear-gradient(90deg, transparent, #1BB8D8, transparent); }
-    .pillar-card.cyan:hover { border-color: rgba(27,184,216,0.25); box-shadow: 0 16px 48px rgba(0,0,0,0.4), 0 0 30px rgba(27,184,216,0.1); }
+    .surface-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(244, 124, 32, 0.28);
+      box-shadow:
+        0 20px 40px -15px rgba(0, 0, 0, 0.7),
+        0 0 25px -5px rgba(244, 124, 32, 0.10),
+        inset 0 1px 0 0 rgba(244, 124, 32, 0.2);
+    }
+    .surface-card:hover::before {
+      opacity: 1;
+      background: linear-gradient(90deg, transparent, rgba(244, 124, 32, 0.65), transparent);
+    }
 
-    .form-input {
-      width: 100%;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 12px;
-      padding: 14px 18px;
-      color: #E5E7EB;
+    .surface-card-cyan:hover {
+      border-color: rgba(27, 184, 216, 0.32);
+      box-shadow:
+        0 20px 40px -15px rgba(0, 0, 0, 0.7),
+        0 0 25px -5px rgba(27, 184, 216, 0.12),
+        inset 0 1px 0 0 rgba(27, 184, 216, 0.22);
+    }
+    .surface-card-cyan:hover::before {
+      opacity: 1;
+      background: linear-gradient(90deg, transparent, rgba(27, 184, 216, 0.7), transparent);
+    }
+
+    /* Typography & Refined Gradients */
+    .display-heading {
       font-family: 'Outfit', sans-serif;
-      font-size: 15px;
-      font-weight: 400;
-      outline: none;
+      letter-spacing: -0.03em;
+    }
+    .text-gradient-metallic {
+      background: linear-gradient(180deg, #FFFFFF 0%, #CBD5E1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .text-gradient-brand {
+      background: linear-gradient(135deg, #F47C20 0%, #FF9E44 48%, #1BB8D8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .text-gradient-orange {
+      background: linear-gradient(90deg, #F47C20 0%, #FFA34E 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .text-gradient-cyan {
+      background: linear-gradient(90deg, #1BB8D8 0%, #67E8F9 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Precision Buttons (Rounded-XL) */
+    .btn-primary {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: linear-gradient(180deg, #F47C20 0%, #DC650B 100%);
+      color: #FFFFFF;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 600;
+      font-size: 14.5px;
+      letter-spacing: -0.01em;
+      padding: 12px 24px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 168, 96, 0.35);
+      box-shadow:
+        0 4px 16px -2px rgba(244, 124, 32, 0.35),
+        inset 0 1px 0 0 rgba(255, 255, 255, 0.28);
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      text-decoration: none;
+    }
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      background: linear-gradient(180deg, #FF882E 0%, #E56C10 100%);
+      box-shadow:
+        0 8px 24px -4px rgba(244, 124, 32, 0.5),
+        inset 0 1px 0 0 rgba(255, 255, 255, 0.38);
+    }
+    .btn-primary:active {
+      transform: translateY(0);
+    }
+    .btn-primary svg {
+      transition: transform 0.25s ease;
+    }
+    .btn-primary:hover svg {
+      transform: translateX(3px);
+    }
+
+    .btn-secondary {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: rgba(15, 22, 38, 0.65);
+      color: #E2E8F0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 600;
+      font-size: 14.5px;
+      letter-spacing: -0.01em;
+      padding: 12px 24px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.11);
+      box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      text-decoration: none;
+    }
+    .btn-secondary:hover {
+      transform: translateY(-1px);
+      color: #FFFFFF;
+      background: rgba(27, 184, 216, 0.08);
+      border-color: rgba(27, 184, 216, 0.45);
+      box-shadow:
+        0 8px 24px -6px rgba(27, 184, 216, 0.22),
+        inset 0 1px 0 0 rgba(27, 184, 216, 0.2);
+    }
+
+    /* Duotone Technical Icon Containers */
+    .icon-box-orange {
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(244, 124, 32, 0.14) 0%, rgba(244, 124, 32, 0.03) 100%);
+      border: 1px solid rgba(244, 124, 32, 0.26);
+      box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
       transition: all 0.3s ease;
     }
-    .form-input::placeholder { color: rgba(229,231,235,0.35); }
-    .form-input:focus {
-      border-color: rgba(244,124,32,0.5);
-      background: rgba(244,124,32,0.04);
-      box-shadow: 0 0 0 3px rgba(244,124,32,0.1), 0 0 20px rgba(244,124,32,0.05);
+    .surface-card:hover .icon-box-orange {
+      border-color: rgba(244, 124, 32, 0.5);
+      box-shadow: 0 0 18px -3px rgba(244, 124, 32, 0.3), inset 0 1px 0 0 rgba(255, 255, 255, 0.15);
     }
-    textarea.form-input { resize: vertical; min-height: 120px; }
 
-    .arch-step {
-      display: flex; align-items: flex-start; gap: 16px;
-      padding: 16px; border-radius: 12px;
-      background: rgba(255,255,255,0.025);
-      border: 1px solid rgba(255,255,255,0.05);
-      transition: all 0.3s;
-    }
-    .arch-step:hover { background: rgba(255,255,255,0.04); border-color: rgba(27,184,216,0.2); }
-    .arch-num {
-      min-width: 32px; height: 32px; border-radius: 50%;
-      background: linear-gradient(135deg, #F47C20, #D96A10);
-      display: flex; align-items: center; justify-content: center;
-      font-weight: 800; font-size: 12px; color: #fff;
+    .icon-box-cyan {
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(27, 184, 216, 0.14) 0%, rgba(27, 184, 216, 0.03) 100%);
+      border: 1px solid rgba(27, 184, 216, 0.26);
+      box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       flex-shrink: 0;
-      box-shadow: 0 4px 12px rgba(244,124,32,0.4);
+      transition: all 0.3s ease;
     }
-    .arch-num.cyan { background: linear-gradient(135deg, #1BB8D8, #0EA5C9); box-shadow: 0 4px 12px rgba(27,184,216,0.4); }
-
-    @keyframes brandLine {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-    .brand-line {
-      height: 3px;
-      background: linear-gradient(90deg, #F47C20, #1BB8D8, #F47C20);
-      background-size: 200% 200%;
-      animation: brandLine 4s ease infinite;
-      border-radius: 2px;
+    .surface-card:hover .icon-box-cyan {
+      border-color: rgba(27, 184, 216, 0.5);
+      box-shadow: 0 0 18px -3px rgba(27, 184, 216, 0.3), inset 0 1px 0 0 rgba(255, 255, 255, 0.15);
     }
 
-    @keyframes float {
-      0%,100% { transform: translateY(0px); }
-      50% { transform: translateY(-12px); }
+    /* Monospace Technical Tags & Eyebrows */
+    .eyebrow-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11.5px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 8px;
+      background: rgba(15, 22, 38, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.06);
+      color: #94A3B8;
     }
-    .anim-float { animation: float 6s ease-in-out infinite; }
 
-    .glow-dot {
-      width: 8px; height: 8px; border-radius: 50%;
-      background: #22c55e;
-      box-shadow: 0 0 8px #22c55e, 0 0 16px rgba(34,197,94,0.4);
-      animation: pulse 2s ease-in-out infinite;
+    .stack-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10.5px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      padding: 4px 9px;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      color: #94A3B8;
+      transition: all 0.2s ease;
+    }
+    .surface-card:hover .stack-pill {
+      border-color: rgba(255, 255, 255, 0.12);
+      color: #CBD5E1;
+    }
+
+    .tech-dock-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      font-weight: 500;
+      padding: 8px 14px;
+      border-radius: 10px;
+      background: rgba(11, 16, 27, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.06);
+      color: #CBD5E1;
+      transition: all 0.25s ease;
+    }
+    .tech-dock-item:hover {
+      border-color: rgba(27, 184, 216, 0.38);
+      background: rgba(27, 184, 216, 0.06);
+      color: #FFFFFF;
+      transform: translateY(-1px);
+    }
+
+    /* Engineering Architecture Steps */
+    .eng-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 14px;
+      border-radius: 10px;
+      background: rgba(6, 9, 17, 0.55);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      transition: all 0.25s ease;
+    }
+    .eng-step:hover {
+      background: rgba(15, 22, 38, 0.8);
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+    .eng-index {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 600;
+      min-width: 30px;
+      height: 26px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .eng-index-cyan {
+      background: rgba(27, 184, 216, 0.12);
+      border: 1px solid rgba(27, 184, 216, 0.3);
+      color: #5CE1FF;
+    }
+    .eng-index-orange {
+      background: rgba(244, 124, 32, 0.12);
+      border: 1px solid rgba(244, 124, 32, 0.3);
+      color: #FF9E44;
+    }
+
+    /* Dividers & Section Surfaces */
+    .hairline-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.08) 20%, rgba(244, 124, 32, 0.22) 50%, rgba(255, 255, 255, 0.08) 80%, transparent 100%);
+    }
+
+    /* Form Controls */
+    .form-label {
+      display: block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #94A3B8;
+      margin-bottom: 8px;
+    }
+    .form-input {
+      width: 100%;
+      background: rgba(6, 9, 17, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      border-radius: 10px;
+      padding: 13px 16px;
+      color: #F8FAFC;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      outline: none;
+      box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.4);
+      transition: all 0.2s ease;
+    }
+    .form-input::placeholder {
+      color: #475569;
+    }
+    .form-input:hover {
+      border-color: rgba(255, 255, 255, 0.16);
+    }
+    .form-input:focus {
+      background: rgba(11, 16, 27, 0.95);
+      border-color: #F47C20;
+      box-shadow: 0 0 0 3px rgba(244, 124, 32, 0.14), inset 0 1px 2px rgba(0, 0, 0, 0.3);
+    }
+    textarea.form-input {
+      resize: vertical;
+      min-height: 116px;
+    }
+
+    /* Status Dot */
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #10B981;
+      box-shadow: 0 0 8px rgba(16, 185, 129, 0.8);
       display: inline-block;
     }
 
-    #mobile-menu { transition: all 0.4s cubic-bezier(0.4,0,0.2,1); max-height: 0; overflow: hidden; }
-    #mobile-menu.open { max-height: 400px; }
-
-    .particle { position: absolute; border-radius: 50%; pointer-events: none; animation: float 6s ease-in-out infinite; }
-
-    .footer-link { color: rgba(229,231,235,0.5); font-size: 14px; transition: color 0.3s; text-decoration:none; }
-    .footer-link:hover { color: #F47C20; }
-
-    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-    .reveal-delay-1 { transition-delay: 0.1s; }
-    .reveal-delay-2 { transition-delay: 0.2s; }
-    .reveal-delay-3 { transition-delay: 0.3s; }
-    .reveal-delay-4 { transition-delay: 0.4s; }
-
-    .logo-circle {
-      width: 40px; height: 40px;
-      border-radius: 50%;
+    /* Logo Badge Container */
+    .logo-badge {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #FFFFFF 0%, #F1F5F9 100%);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       overflow: hidden;
-      border: 2px solid rgba(255,255,255,0.1);
-      transition: border-color 0.3s;
       flex-shrink: 0;
-      background: linear-gradient(135deg, #F47C20, #1BB8D8);
-      display: flex; align-items: center; justify-content: center;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
-    .logo-circle img { width: 100%; height: 100%; object-fit: contain; padding: 4px; }
+    .group:hover .logo-badge {
+      transform: scale(1.03);
+      box-shadow: 0 0 16px rgba(244, 124, 32, 0.3);
+    }
+    .logo-badge img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 4px;
+    }
+
+    /* Mobile Menu */
+    #mobile-menu {
+      transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+    }
+    #mobile-menu.open {
+      max-height: 380px;
+      opacity: 1;
+    }
+
+    /* Reveal Animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.08s; }
+    .reveal-delay-2 { transition-delay: 0.16s; }
+    .reveal-delay-3 { transition-delay: 0.24s; }
+    .reveal-delay-4 { transition-delay: 0.32s; }
+
+    .footer-link {
+      color: #64748B;
+      font-size: 13.5px;
+      transition: color 0.2s ease;
+      text-decoration: none;
+    }
+    .footer-link:hover {
+      color: #F8FAFC;
+    }
   </style>
 </head>
 
-<body class="font-outfit antialiased" style="background-color:#0B0F19;">
+<body class="antialiased selection:bg-brand-orange/30 selection:text-white">
 
-  <!-- NAVBAR -->
-  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500" role="navigation" aria-label="Navegación principal">
-    <div class="glass border-b border-white/5 px-6 py-4">
-      <div class="max-w-7xl mx-auto flex items-center justify-between">
+  <!-- FLOATING CAPSULE NAVBAR -->
+  <header id="navbar" class="fixed top-4 left-0 right-0 z-50 px-4 sm:px-6" role="banner">
+    <nav class="nav-capsule max-w-6xl mx-auto rounded-2xl px-4 sm:px-6 py-3" role="navigation" aria-label="Navegación principal">
+      <div class="flex items-center justify-between">
+        <!-- Brand Identity -->
         <a href="#inicio" class="flex items-center gap-3 group" aria-label="Kptar App - Inicio">
-          <div class="logo-circle group-hover:border-orange-400/40" style="width:52px;height:52px;background:#fff;border-radius:50%;overflow:hidden;">
-            <img src="assets/kptar-logo.png" alt="Kptar App C.A." onerror="this.style.display='none';this.parentElement.innerHTML='<span style=\'font-weight:900;color:#F47C20;font-size:20px;\'>K</span>';" style="width:100%;height:100%;object-fit:contain;padding:4px;" />
+          <div class="logo-badge">
+            <img src="assets/kptar-logo.png" alt="Kptar App C.A." onerror="this.style.display='none';this.parentElement.innerHTML='<span style=\'font-family:Outfit;font-weight:900;color:#F47C20;font-size:18px;\'>K</span>';" />
           </div>
-          <div>
-            <div class="text-white font-bold text-lg leading-none">kptar<span class="gradient-text-orange">app</span></div>
-            <div class="text-xs text-gray-500 font-medium">Venture Builder · C.A.</div>
+          <div class="flex flex-col">
+            <div class="font-outfit font-bold text-white text-lg leading-none tracking-tight">
+              kptar<span class="text-gradient-orange">app</span>
+            </div>
+            <div class="font-mono text-[10px] text-slate-400 tracking-wider uppercase mt-1">
+              Software Engineering · C.A.
+            </div>
           </div>
         </a>
 
-        <div class="hidden md:flex items-center gap-8">
-          <a href="#ecosistema" class="nav-link">Ecosistema</a>
+        <!-- Desktop Navigation Links -->
+        <div class="hidden md:flex items-center gap-1 bg-obsidian-900/60 border border-white/[0.06] rounded-xl p-1">
+          <a href="#ecosistema" class="nav-link">Portafolio</a>
           <a href="#arquitectura" class="nav-link">Tecnología</a>
           <a href="#nosotros" class="nav-link">Nosotros</a>
           <a href="#contacto" class="nav-link">Contacto</a>
         </div>
 
-        <div class="flex items-center gap-4">
-          <a href="#contacto" class="hidden md:inline-block btn-primary" style="padding:10px 24px;font-size:14px;border-radius:50px;">
-            Alianza Estratégica →
+        <!-- Primary Action & Mobile Toggle -->
+        <div class="flex items-center gap-3">
+          <a href="#contacto" class="hidden md:inline-flex btn-primary !py-2.5 !px-4 !text-xs !rounded-xl">
+            <span>Cotizar Proyecto</span>
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+            </svg>
           </a>
-          <button id="mobile-toggle" class="md:hidden p-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-all" aria-label="Menú" aria-expanded="false">
-            <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
-            <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+          <button id="mobile-toggle" class="md:hidden p-2 rounded-xl text-slate-400 hover:text-white hover:bg-white/5 border border-transparent hover:border-white/10 transition-all" aria-label="Abrir menú de navegación" aria-expanded="false">
+            <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
           </button>
         </div>
       </div>
+
+      <!-- Mobile Dropdown -->
       <div id="mobile-menu">
-        <div class="max-w-7xl mx-auto pt-4 pb-2 flex flex-col gap-1">
-          <a href="#ecosistema" class="nav-link px-2 py-3 border-b border-white/5 block">Ecosistema</a>
-          <a href="#arquitectura" class="nav-link px-2 py-3 border-b border-white/5 block">Tecnología</a>
-          <a href="#nosotros" class="nav-link px-2 py-3 border-b border-white/5 block">Nosotros</a>
-          <a href="#contacto" class="nav-link px-2 py-3 border-b border-white/5 block">Contacto</a>
-          <a href="#contacto" class="btn-primary mt-3" style="border-radius:12px;">Alianza Estratégica →</a>
+        <div class="pt-4 pb-2 mt-3 border-t border-white/[0.07] flex flex-col gap-1">
+          <a href="#ecosistema" class="nav-link px-3 py-2.5 block">Portafolio</a>
+          <a href="#arquitectura" class="nav-link px-3 py-2.5 block">Tecnología</a>
+          <a href="#nosotros" class="nav-link px-3 py-2.5 block">Nosotros</a>
+          <a href="#contacto" class="nav-link px-3 py-2.5 block">Contacto</a>
+          <a href="#contacto" class="btn-primary mt-2 w-full justify-center">
+            <span>Cotizar Proyecto</span>
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
         </div>
       </div>
-    </div>
-  </nav>
+    </nav>
+  </header>
 
   <!-- HERO SECTION -->
-  <section id="inicio" class="relative min-h-screen flex items-center justify-center overflow-hidden hero-bg" aria-label="Sección de inicio">
+  <section id="inicio" class="relative min-h-screen flex items-center justify-center overflow-hidden hero-surface pt-32 pb-20" aria-label="Sección de inicio">
+    <!-- Architectural Grid & Circuit Canvas -->
+    <div class="absolute inset-0 bg-grid-pattern pointer-events-none" aria-hidden="true"></div>
     <canvas id="circuit-canvas" aria-hidden="true"></canvas>
 
-    <div class="particle w-2 h-2" style="background:rgba(244,124,32,0.3);top:20%;left:15%;animation-delay:0s;" aria-hidden="true"></div>
-    <div class="particle w-1.5 h-1.5" style="background:rgba(27,184,216,0.25);top:35%;left:80%;animation-delay:1.5s;" aria-hidden="true"></div>
-    <div class="particle w-3 h-3" style="background:rgba(244,124,32,0.2);top:70%;left:10%;animation-delay:3s;" aria-hidden="true"></div>
-    <div class="particle w-2 h-2" style="background:rgba(27,184,216,0.3);top:60%;left:88%;animation-delay:2s;" aria-hidden="true"></div>
-
-    <div class="relative z-10 max-w-7xl mx-auto px-6 pt-28 pb-20 text-center">
-      <div class="reveal inline-flex items-center gap-2 glass px-5 py-2.5 rounded-full mb-10 border border-white/8">
-        <span class="glow-dot"></span>
-        <span class="text-sm font-semibold text-gray-300">Venture Builder activo en <span class="gradient-text-orange">Latinoamérica</span></span>
+    <div class="relative z-10 max-w-6xl mx-auto px-6 text-center">
+      <!-- Status Badge -->
+      <div class="reveal inline-flex items-center gap-3 px-4 py-2 rounded-full bg-obsidian-800/90 border border-white/[0.08] shadow-inner mb-8">
+        <span class="status-dot"></span>
+        <span class="font-mono text-xs font-medium text-slate-300 tracking-wide">INGENIERÍA DE SOFTWARE &amp; IA</span>
+        <span class="text-white/20">·</span>
+        <span class="font-mono text-xs font-semibold text-brand-orangeLight">CONSULTORÍA TECNOLÓGICA</span>
       </div>
 
-      <h1 class="reveal reveal-delay-1 font-black leading-tight tracking-tight mb-8" style="font-size:clamp(2.5rem,7vw,5rem);max-width:900px;margin-left:auto;margin-right:auto;">
-        <span class="gradient-text">Acelerando el Futuro<br>Digital de</span>
-        <br>
-        <span class="text-white">Latinoamérica</span>
+      <!-- Main Display Headline -->
+      <h1 class="reveal reveal-delay-1 display-heading font-extrabold leading-[1.08] mb-7 mx-auto" style="font-size: clamp(2.4rem, 5.6vw, 4.4rem); max-width: 960px;">
+        <span class="text-gradient-metallic">Ingeniería de Software de Alto Nivel</span><br />
+        <span class="text-gradient-brand">para Proyectos Ambiciosos</span>
       </h1>
 
-      <p class="reveal reveal-delay-2 text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-12 leading-relaxed font-light">
-        Ecosistema unificado de software y <strong class="text-gray-200 font-semibold">Progressive Web Applications (PWA)</strong> de alto impacto.
-        Diseñamos, construimos y escalamos arquitecturas <strong class="text-gray-200 font-semibold">SaaS multitenant</strong> conectadas
-        a una infraestructura en la nube <span class="gradient-text-cyan font-semibold">ultra-eficiente</span>.
+      <!-- Subtitle -->
+      <p class="reveal reveal-delay-2 text-base sm:text-lg md:text-xl text-slate-400 max-w-3xl mx-auto mb-10 leading-relaxed font-normal">
+        Diseñamos, desarrollamos y escalamos ecosistemas digitales: <strong class="text-slate-100 font-semibold">plataformas SaaS multitenant, aplicaciones móviles nativas y soluciones con Inteligencia Artificial</strong>.
+        Transformamos requerimientos complejos en <span class="text-brand-cyanLight font-medium">software en producción</span>.
       </p>
 
-      <div class="reveal reveal-delay-3 flex flex-col sm:flex-row gap-4 justify-center items-center mb-20">
-        <a href="#ecosistema" class="btn-primary" style="min-width:200px;">Explorar Ecosistema →</a>
-        <a href="#contacto" class="btn-secondary" style="min-width:200px;">Hablar con el Equipo</a>
+      <!-- Hero Actions -->
+      <div class="reveal reveal-delay-3 flex flex-col sm:flex-row gap-3.5 justify-center items-center mb-16">
+        <a href="#contacto" class="btn-primary w-full sm:w-auto min-w-[225px]">
+          <span>Iniciar un Proyecto</span>
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+          </svg>
+        </a>
+        <a href="#arquitectura" class="btn-secondary w-full sm:w-auto min-w-[225px]">
+          <svg class="w-4 h-4 text-brand-cyan" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+          </svg>
+          <span>Ver Capacidades Técnicas</span>
+        </a>
       </div>
 
-      <div class="reveal reveal-delay-4 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-        <div class="glass p-6 rounded-2xl text-center">
-          <div class="gradient-text-orange font-black" style="font-size:2.2rem;line-height:1;">5+</div>
-          <div class="text-xs text-gray-500 mt-1 font-medium uppercase tracking-wider">Verticales activas</div>
-        </div>
-        <div class="glass p-6 rounded-2xl text-center">
-          <div class="gradient-text-cyan font-black" style="font-size:2.2rem;line-height:1;">PWA</div>
-          <div class="text-xs text-gray-500 mt-1 font-medium uppercase tracking-wider">Nativo &amp; Offline</div>
-        </div>
-        <div class="glass p-6 rounded-2xl text-center">
-          <div class="gradient-text-orange font-black" style="font-size:2.2rem;line-height:1;">B2B</div>
-          <div class="text-xs text-gray-500 mt-1 font-medium uppercase tracking-wider">Enfoque empresarial</div>
-        </div>
-        <div class="glass p-6 rounded-2xl text-center">
-          <div class="gradient-text-cyan font-black" style="font-size:2.2rem;line-height:1;">SaaS</div>
-          <div class="text-xs text-gray-500 mt-1 font-medium uppercase tracking-wider">Multitenant</div>
-        </div>
-      </div>
-    </div>
+      <!-- Executive Telemetry / KPI Bar -->
+      <div class="reveal reveal-delay-4 surface-card rounded-2xl max-w-4xl mx-auto">
+        <div class="grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-white/[0.07]">
+          <div class="p-6 text-left sm:text-center flex flex-col justify-between">
+            <div class="flex items-center sm:justify-center gap-2 mb-2">
+              <span class="font-mono font-bold text-2xl sm:text-3xl text-white tracking-tight">05<span class="text-brand-orange">+</span></span>
+            </div>
+            <div class="font-mono text-[11px] text-slate-400 uppercase tracking-wider">Sistemas en Producción</div>
+          </div>
 
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40" aria-hidden="true">
-      <span class="text-xs text-gray-500 font-medium uppercase tracking-widest">Scroll</span>
-      <div class="w-5 h-8 rounded-full border border-gray-600 flex items-start justify-center p-1">
-        <div class="w-1 h-2 bg-gray-400 rounded-full" style="animation:float 1.5s ease-in-out infinite;"></div>
+          <div class="p-6 text-left sm:text-center flex flex-col justify-between">
+            <div class="flex items-center sm:justify-center gap-2 mb-2">
+              <span class="font-mono font-bold text-lg sm:text-xl lg:text-2xl text-brand-cyanLight tracking-tight leading-none py-1">MULTI-PLATAFORMA</span>
+            </div>
+            <div class="font-mono text-[11px] text-slate-400 uppercase tracking-wider">PWA, Mobile Nativo &amp; Web</div>
+          </div>
+
+          <div class="p-6 text-left sm:text-center flex flex-col justify-between">
+            <div class="flex items-center sm:justify-center gap-2 mb-2">
+              <span class="font-mono font-bold text-2xl sm:text-3xl text-white tracking-tight">B2B</span>
+            </div>
+            <div class="font-mono text-[11px] text-slate-400 uppercase tracking-wider">Enfoque Empresarial</div>
+          </div>
+
+          <div class="p-6 text-left sm:text-center flex flex-col justify-between">
+            <div class="flex items-center sm:justify-center gap-2 mb-2">
+              <span class="font-mono font-bold text-2xl sm:text-3xl text-brand-orangeLight tracking-tight">SaaS</span>
+            </div>
+            <div class="font-mono text-[11px] text-slate-400 uppercase tracking-wider">Motor Multitenant</div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <div class="divider"></div>
+  <div class="hairline-divider"></div>
 
-  <!-- ECOSYSTEM SECTION -->
-  <section id="ecosistema" class="py-28 px-6 section-bg-orange" aria-label="Nuestro ecosistema de soluciones">
-    <div class="max-w-7xl mx-auto">
-      <div class="text-center mb-20">
-        <div class="reveal inline-flex items-center gap-2 mb-6">
-          <span class="tech-badge">● Portafolio</span>
+  <!-- ECOSYSTEM SECTION (BENTO GRID) -->
+  <section id="ecosistema" class="relative py-28 px-6 bg-obsidian-900" aria-label="Casos de Estudio y Portafolio de Ingeniería">
+    <div class="max-w-6xl mx-auto">
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div>
+          <div class="reveal mb-4">
+            <span class="eyebrow-badge">
+              <span class="w-1.5 h-1.5 rounded-full bg-brand-orange"></span>
+              01 // PROOF OF WORK · CASOS DE ESTUDIO
+            </span>
+          </div>
+          <h2 class="reveal reveal-delay-1 display-heading font-extrabold text-white leading-tight" style="font-size: clamp(2rem, 4.5vw, 3.1rem);">
+            Portafolio de <span class="text-gradient-brand">Ingeniería</span>
+          </h2>
         </div>
-        <h2 class="reveal reveal-delay-1 font-black text-white mb-6 leading-tight" style="font-size:clamp(2rem,5vw,3.5rem);">
-          El <span class="gradient-text">Ecosistema</span> Kptar
-        </h2>
-        <p class="reveal reveal-delay-2 text-gray-400 text-lg max-w-2xl mx-auto font-light leading-relaxed">
-          Cinco verticales de negocio tecnológico, cada una diseñada con una arquitectura backend compartida
-          y monetización de alto impacto en mercados clave de la región.
+        <p class="reveal reveal-delay-2 text-slate-400 text-base max-w-lg leading-relaxed">
+          Sistemas en producción desarrollados por nuestro equipo que demuestran solvencia técnica comprobada en <strong class="text-slate-200 font-medium">LegalTech, B2B Automation, EdTech, PropTech y Aplicaciones Móviles</strong>.
         </p>
-        <div class="brand-line w-24 mx-auto mt-8 reveal reveal-delay-3"></div>
       </div>
 
+      <!-- Bento Grid -->
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-        <!-- Juridico HC -->
-        <div class="glass-card rounded-2xl p-8 reveal">
-          <div class="flex items-start gap-4 mb-5">
-            <div class="icon-wrap-orange" aria-hidden="true">⚖️</div>
-            <div>
-              <h3 class="text-white font-bold text-xl leading-tight">Jurídico HC</h3>
-              <span class="text-xs font-bold px-2 py-0.5 rounded-full mt-1 inline-block" style="background:rgba(244,124,32,0.12);color:#F47C20;border:1px solid rgba(244,124,32,0.25);">Legal Tech · IA</span>
+        <!-- 1. Jurídico HC -->
+        <article class="surface-card rounded-2xl p-7 flex flex-col justify-between reveal">
+          <div>
+            <!-- Card Top Bar -->
+            <div class="flex items-start justify-between gap-4 mb-6">
+              <div class="flex items-center gap-3.5">
+                <div class="icon-box-orange" aria-hidden="true">
+                  <!-- SVG Scale / Legal Balance Icon -->
+                  <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="#F47C20" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 3v18"/><path d="M5 7h14"/>
+                    <path d="m5 7-3 6h6l-3-6Z" fill="rgba(244,124,32,0.15)"/>
+                    <path d="m19 7-3 6h6l-3-6Z" fill="rgba(27,184,216,0.15)" stroke="#1BB8D8"/>
+                    <path d="M8 21h8"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-outfit font-bold text-white text-xl leading-snug">Jurídico HC</h3>
+                  <span class="font-mono text-[11px] font-medium text-brand-orangeLight">LEGALTECH · NLP IA</span>
+                </div>
+              </div>
+              <span class="inline-flex items-center gap-1.5 font-mono text-[10px] font-semibold px-2.5 py-1 rounded-md bg-emerald-500/10 text-emerald-400 border border-emerald-500/25 flex-shrink-0">
+                <span class="status-dot !w-1.5 !h-1.5"></span>
+                EN PRODUCCIÓN
+              </span>
+            </div>
+
+            <!-- Description -->
+            <p class="text-slate-400 text-sm leading-relaxed mb-6">
+              Plataforma avanzada de <strong class="text-slate-200 font-semibold">automatización de documentos contractuales y poderes de gestión</strong>. Optimiza el ciclo legal mediante un flujo autónomo guiado que extrae variables en texto natural para generar documentos en segundos.
+            </p>
+
+            <!-- Technical Highlights Box -->
+            <div class="rounded-xl p-4 mb-6 bg-obsidian-900/80 border border-white/[0.06] space-y-3">
+              <div class="font-mono text-[10px] uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
+                <svg class="w-3.5 h-3.5 text-brand-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4"/></svg>
+                Capacidades Clave
+              </div>
+              <div class="flex items-start gap-2.5">
+                <svg class="w-4 h-4 text-brand-cyan flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                <p class="text-slate-400 text-xs leading-relaxed">Generación autónoma de <strong class="text-slate-200 font-medium">contratos de compraventa de vehículos</strong>, arrendamientos residenciales o comerciales, y poderes (especiales, amplios y suficientes).</p>
+              </div>
+              <div class="flex items-start gap-2.5">
+                <svg class="w-4 h-4 text-brand-cyan flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                <p class="text-slate-400 text-xs leading-relaxed"><strong class="text-slate-200 font-medium">Pipeline de extracción de entidades dinámicas</strong> mediante lenguaje natural, eliminando los formularios rígidos secuenciales.</p>
+              </div>
             </div>
           </div>
-          <p class="text-gray-400 text-sm leading-relaxed mb-5 font-light">
-            Plataforma avanzada de <strong class="text-gray-200 font-semibold">automatización de documentos contractuales y poderes de gestión</strong>. Optimiza el ciclo legal mediante un flujo autónomo guiado que extrae variables en texto natural para generar documentos en segundos.
-          </p>
-          <div class="rounded-xl p-4 mb-5 space-y-3" style="background:rgba(244,124,32,0.04);border:1px solid rgba(244,124,32,0.1);">
-            <p class="text-xs font-bold uppercase tracking-widest mb-3" style="color:#F47C20;">✦ Highlights</p>
-            <div class="flex items-start gap-2.5">
-              <span class="flex-shrink-0 w-4 h-4 rounded-full flex items-center justify-center mt-0.5" style="background:rgba(27,184,216,0.15);border:1px solid rgba(27,184,216,0.4);">
-                <svg class="w-2.5 h-2.5" fill="none" stroke="#1BB8D8" stroke-width="3" viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg>
-              </span>
-              <p class="text-gray-400 text-xs leading-relaxed">Generación autónoma de <strong class="text-gray-200 font-medium">contratos de compraventa de vehículos</strong>, arrendamientos residenciales o comerciales, y poderes (especiales, amplios y suficientes).</p>
+
+          <!-- Stack Pills & Live Application CTA -->
+          <div class="pt-3 border-t border-white/[0.05] space-y-3.5">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="stack-pill">EXTRACCIÓN DE DATOS</span>
+              <span class="stack-pill">CONTRATOS &amp; ARRENDAMIENTOS</span>
+              <span class="stack-pill">PODERES DE GESTIÓN</span>
             </div>
-            <div class="flex items-start gap-2.5">
-              <span class="flex-shrink-0 w-4 h-4 rounded-full flex items-center justify-center mt-0.5" style="background:rgba(27,184,216,0.15);border:1px solid rgba(27,184,216,0.4);">
-                <svg class="w-2.5 h-2.5" fill="none" stroke="#1BB8D8" stroke-width="3" viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg>
+            <a href="https://juridicohc.com" target="_blank" rel="noopener noreferrer"
+               class="group/btn flex items-center justify-between w-full px-4 py-2.5 rounded-xl font-mono text-xs font-semibold text-white transition-all duration-200 no-underline"
+               style="background: linear-gradient(90deg, rgba(244, 124, 32, 0.14) 0%, rgba(27, 184, 216, 0.10) 100%); border: 1px solid rgba(244, 124, 32, 0.35); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);"
+               onmouseover="this.style.borderColor='rgba(244, 124, 32, 0.65)';this.style.boxShadow='0 8px 20px -6px rgba(244, 124, 32, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2)';"
+               onmouseout="this.style.borderColor='rgba(244, 124, 32, 0.35)';this.style.boxShadow='inset 0 1px 0 rgba(255, 255, 255, 0.1)';">
+              <span class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-brand-orange"></span>
+                <span>Probar Aplicación Live</span>
               </span>
-              <p class="text-gray-400 text-xs leading-relaxed"><strong class="text-gray-200 font-medium">Pipeline de extracción de entidades dinámicas</strong> mediante lenguaje natural, eliminando los formularios rígidos secuenciales.</p>
+              <span class="inline-flex items-center gap-1.5 text-brand-orangeLight">
+                <span class="text-[10px] text-slate-400 font-normal">juridicohc.com</span>
+                <svg class="w-3.5 h-3.5 transition-transform duration-200 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M7 17L17 7"/><path d="M7 7h10v10"/>
+                </svg>
+              </span>
+            </a>
+          </div>
+        </article>
+
+        <!-- 2. Kptar Business -->
+        <article class="surface-card surface-card-cyan rounded-2xl p-7 flex flex-col justify-between reveal reveal-delay-1">
+          <div>
+            <div class="flex items-start justify-between gap-4 mb-6">
+              <div class="flex items-center gap-3.5">
+                <div class="icon-box-cyan" aria-hidden="true">
+                  <!-- SVG B2B Intelligence / Radar Network Icon -->
+                  <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="#1BB8D8" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 3v18h18"/>
+                    <path d="m19 9-5 5-4-4-3 3"/>
+                    <circle cx="19" cy="9" r="2" fill="rgba(244,124,32,0.25)" stroke="#F47C20"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-outfit font-bold text-white text-xl leading-snug">Kptar Business</h3>
+                  <span class="font-mono text-[11px] font-medium text-brand-cyanLight">B2B · IA · GROWTH</span>
+                </div>
+              </div>
+              <span class="font-mono text-[10px] px-2.5 py-1 rounded-md bg-brand-cyan/10 text-brand-cyanLight border border-brand-cyan/25 flex-shrink-0">FASE BETA</span>
+            </div>
+
+            <p class="text-slate-400 text-sm leading-relaxed mb-6">
+              El <strong class="text-slate-200 font-semibold">núcleo operativo de inteligencia comercial B2B</strong> para la aceleración del crecimiento empresarial mediante automatización avanzada y prospección inteligente.
+            </p>
+
+            <div class="rounded-xl p-4 mb-6 bg-obsidian-900/80 border border-white/[0.06] space-y-3">
+              <div class="font-mono text-[10px] uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
+                <svg class="w-3.5 h-3.5 text-brand-cyan" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4"/></svg>
+                Capacidades Clave
+              </div>
+              <div class="flex items-start gap-2.5">
+                <svg class="w-4 h-4 text-brand-cyan flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                <p class="text-slate-400 text-xs leading-relaxed"><strong class="text-slate-200 font-medium">Gestión automatizada de redes sociales corporativas</strong> potenciada por IA para el posicionamiento orgánico y crecimiento de marca.</p>
+              </div>
+              <div class="flex items-start gap-2.5">
+                <svg class="w-4 h-4 text-brand-cyan flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                <p class="text-slate-400 text-xs leading-relaxed"><strong class="text-slate-200 font-medium">Motor inteligente de prospección pasivo-agresiva</strong> que automatiza la captación activa de clientes de alto impacto en el sector B2B.</p>
+              </div>
             </div>
           </div>
-          <div class="flex flex-wrap gap-1.5">
-            <span class="tech-badge" style="font-size:10px;padding:3px 8px;letter-spacing:0.4px;">EXTRACCIÓN DE DATOS</span>
-            <span class="tech-badge" style="font-size:10px;padding:3px 8px;letter-spacing:0.4px;">CONTRATOS &amp; ARRENDAMIENTOS</span>
-            <span class="tech-badge" style="font-size:10px;padding:3px 8px;letter-spacing:0.4px;">PODERES DE GESTIÓN</span>
+
+          <div class="flex flex-wrap gap-1.5 pt-2 border-t border-white/[0.05]">
+            <span class="stack-pill">PROSPECCIÓN CON IA</span>
+            <span class="stack-pill">MARKETING AUTOMATION</span>
+            <span class="stack-pill">CRECIMIENTO B2B</span>
+          </div>
+        </article>
+
+        <!-- 3. Safe School -->
+        <article class="surface-card rounded-2xl p-7 flex flex-col justify-between reveal reveal-delay-2">
+          <div>
+            <div class="flex items-start justify-between gap-4 mb-6">
+              <div class="flex items-center gap-3.5">
+                <div class="icon-box-orange" aria-hidden="true">
+                  <!-- SVG Academic / Cognitive Cap Icon -->
+                  <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="#F47C20" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 10v6M2 10l10-5 10 5-10 5z" fill="rgba(244,124,32,0.14)"/>
+                    <path d="M6 12v5c0 2 3 3 6 3s6-1 6-3v-5" stroke="#1BB8D8"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-outfit font-bold text-white text-xl leading-snug">Safe School</h3>
+                  <span class="font-mono text-[11px] font-medium text-brand-orangeLight">EDTECH · IA COGNITIVA</span>
+                </div>
+              </div>
+              <span class="font-mono text-[10px] px-2.5 py-1 rounded-md bg-amber-500/10 text-amber-400 border border-amber-500/25 flex-shrink-0">EN DESARROLLO</span>
+            </div>
+
+            <p class="text-slate-400 text-sm leading-relaxed mb-6">
+              Plataforma integral de <strong class="text-slate-200 font-semibold">gestión escolar y control administrativo</strong> para instituciones educativas. Centraliza y automatiza la relación operativa entre la institución y la comunidad escolar.
+            </p>
+
+            <div class="rounded-xl p-4 mb-6 bg-obsidian-900/80 border border-white/[0.06] space-y-3">
+              <div class="font-mono text-[10px] uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
+                <svg class="w-3.5 h-3.5 text-brand-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4"/></svg>
+                Capacidades Clave
+              </div>
+              <div class="flex items-start gap-2.5">
+                <svg class="w-4 h-4 text-brand-cyan flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                <p class="text-slate-400 text-xs leading-relaxed"><strong class="text-slate-200 font-medium">Aprendizaje cognitivo basado en IA</strong> para el seguimiento personalizado del rendimiento estudiantil y detección de patrones de desempeño.</p>
+              </div>
+              <div class="flex items-start gap-2.5">
+                <svg class="w-4 h-4 text-brand-cyan flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                <p class="text-slate-400 text-xs leading-relaxed"><strong class="text-slate-200 font-medium">Gestión centralizada de inscripciones y cuotas</strong> con canales de comunicación directa entre directores, docentes y representantes.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap gap-1.5 pt-2 border-t border-white/[0.05]">
+            <span class="stack-pill">INTELIGENCIA COGNITIVA</span>
+            <span class="stack-pill">CONTROL ACADÉMICO</span>
+            <span class="stack-pill">PLATAFORMA ESCOLAR</span>
+          </div>
+        </article>
+
+        <!-- 4. Condominios -->
+        <article class="surface-card surface-card-cyan rounded-2xl p-7 flex flex-col justify-between reveal reveal-delay-1">
+          <div>
+            <div class="flex items-start justify-between gap-4 mb-6">
+              <div class="flex items-center gap-3.5">
+                <div class="icon-box-cyan" aria-hidden="true">
+                  <!-- SVG PropTech / Smart Building Icon -->
+                  <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="#1BB8D8" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="4" y="2" width="16" height="20" rx="2" fill="rgba(27,184,216,0.12)"/>
+                    <path d="M9 22v-4h6v4" stroke="#F47C20"/>
+                    <path d="M8 6h.01M16 6h.01M12 6h.01M12 10h.01M12 14h.01M16 10h.01M16 14h.01M8 10h.01M8 14h.01"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-outfit font-bold text-white text-xl leading-snug">Condominios</h3>
+                  <span class="font-mono text-[11px] font-medium text-brand-cyanLight">PROPTECH · DOMÓTICA</span>
+                </div>
+              </div>
+              <span class="font-mono text-[10px] px-2.5 py-1 rounded-md bg-brand-cyan/10 text-brand-cyanLight border border-brand-cyan/25 flex-shrink-0">FASE BETA</span>
+            </div>
+
+            <p class="text-slate-400 text-sm leading-relaxed mb-6">
+              Plataforma <strong class="text-slate-200 font-semibold">multi-tenant de transparencia financiera y administración residencial</strong> para juntas de condominio, optimizada para un despliegue y configuración ágil.
+            </p>
+
+            <div class="rounded-xl p-4 mb-6 bg-obsidian-900/80 border border-white/[0.06] space-y-3">
+              <div class="font-mono text-[10px] uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
+                <svg class="w-3.5 h-3.5 text-brand-cyan" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4"/></svg>
+                Capacidades Clave
+              </div>
+              <div class="flex items-start gap-2.5">
+                <svg class="w-4 h-4 text-brand-cyan flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                <p class="text-slate-400 text-xs leading-relaxed"><strong class="text-slate-200 font-medium">Ledger financiero transparente</strong> para la carga mensual de planillas de gastos comunes, estados de cuenta, alícuotas y reportes de cobro.</p>
+              </div>
+              <div class="flex items-start gap-2.5">
+                <svg class="w-4 h-4 text-brand-cyan flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                <p class="text-slate-400 text-xs leading-relaxed"><span class="font-mono text-[10px] font-semibold text-brand-cyanLight">ROADMAP →</span> Integración de <strong class="text-slate-200 font-medium">domótica avanzada e IA</strong> para la automatización y gestión de hogares inteligentes.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap gap-1.5 pt-2 border-t border-white/[0.05]">
+            <span class="stack-pill">TRANSPARENCIA FINANCIERA</span>
+            <span class="stack-pill">DOMÓTICA &amp; IA</span>
+            <span class="stack-pill">GESTIÓN RESIDENCIAL</span>
+          </div>
+        </article>
+
+        <!-- 5. Alas Viw -->
+        <article class="surface-card rounded-2xl p-7 flex flex-col justify-between reveal reveal-delay-2">
+          <div>
+            <div class="flex items-start justify-between gap-4 mb-6">
+              <div class="flex items-center gap-3.5">
+                <div class="icon-box-orange" aria-hidden="true">
+                  <!-- SVG Shield Heart / Social Protection Icon -->
+                  <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="#F47C20" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" fill="rgba(244,124,32,0.12)"/>
+                    <path d="m9 12 2 2 4-4" stroke="#1BB8D8"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-outfit font-bold text-white text-xl leading-snug">Alas Viw</h3>
+                  <span class="font-mono text-[11px] font-medium text-brand-orangeLight">MOBILE APP · ANDROID / IOS · ADMOB</span>
+                </div>
+              </div>
+              <span class="font-mono text-[10px] px-2.5 py-1 rounded-md bg-amber-500/10 text-amber-400 border border-amber-500/25 flex-shrink-0">EN DESARROLLO</span>
+            </div>
+
+            <p class="text-slate-400 text-sm leading-relaxed mb-6">
+              <strong class="text-slate-200 font-semibold">Aplicación móvil nativa (Android &amp; iOS)</strong> de alcance masivo orientada al <strong class="text-slate-200 font-semibold">beneficio social</strong>, que ofrece un servicio de prevención funeraria <strong class="text-slate-200 font-semibold">100% gratuito</strong> para el usuario, financiado bajo un modelo publicitario eficiente.
+            </p>
+
+            <div class="rounded-xl p-4 mb-6 bg-obsidian-900/80 border border-white/[0.06] space-y-3">
+              <div class="font-mono text-[10px] uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
+                <svg class="w-3.5 h-3.5 text-brand-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4"/></svg>
+                Capacidades Clave
+              </div>
+              <div class="flex items-start gap-2.5">
+                <svg class="w-4 h-4 text-brand-cyan flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                <p class="text-slate-400 text-xs leading-relaxed"><strong class="text-slate-200 font-medium">Alto valor percibido y tracción orgánica masiva</strong> al resolver una necesidad crítica mediante el acceso gratuito a servicios de prevención funeraria.</p>
+              </div>
+              <div class="flex items-start gap-2.5">
+                <svg class="w-4 h-4 text-brand-cyan flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                <p class="text-slate-400 text-xs leading-relaxed"><strong class="text-slate-200 font-medium">Monetización pasiva de alto volumen</strong> sustentada en la retención constante y la exposición estratégica a impresiones de Google AdMob.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap gap-1.5 pt-2 border-t border-white/[0.05]">
+            <span class="stack-pill">MOBILE APP NATIVA</span>
+            <span class="stack-pill">ANDROID &amp; IOS</span>
+            <span class="stack-pill">GOOGLE ADMOB</span>
+            <span class="stack-pill">IMPACTO SOCIAL</span>
+          </div>
+        </article>
+
+        <!-- 6. Custom Software Engineering CTA Card -->
+        <div class="surface-card rounded-2xl p-7 flex flex-col justify-between reveal reveal-delay-3"
+             style="background: radial-gradient(circle at 90% 10%, rgba(244, 124, 32, 0.14), transparent 55%), radial-gradient(circle at 10% 90%, rgba(27, 184, 216, 0.12), transparent 55%), rgba(11, 16, 27, 0.92); border-color: rgba(244, 124, 32, 0.22);">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <div class="icon-box-orange">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="#F47C20" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="12 2 2 7 12 12 22 7 12 2" fill="rgba(244,124,32,0.15)"/>
+                  <polyline points="2 17 12 22 22 17" stroke="#1BB8D8"/>
+                  <polyline points="2 12 12 17 22 12"/>
+                </svg>
+              </div>
+              <span class="font-mono text-[10px] uppercase tracking-widest px-2.5 py-1 rounded-md bg-brand-orange/10 text-brand-orangeLight border border-brand-orange/25">
+                DESARROLLO A MEDIDA
+              </span>
+            </div>
+
+            <h3 class="font-outfit font-bold text-white text-2xl mb-3 leading-snug">
+              ¿Tienes un proyecto de software en mente?
+            </h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-6">
+              Lo construimos de punta a punta con <strong class="text-slate-200 font-semibold">arquitecturas modernas y escalables</strong>. Desde el diseño técnico y bases de datos hasta el despliegue en producción para tu empresa.
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-white/[0.06]">
+            <a href="#contacto" class="btn-primary w-full justify-center">
+              <span>Iniciar un Proyecto</span>
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+              </svg>
+            </a>
           </div>
         </div>
 
-        <!-- Kptar Business -->
-        <div class="glass-card glass-card-cyan rounded-2xl p-8 reveal reveal-delay-1">
-          <div class="flex items-start gap-4 mb-5">
-            <div class="icon-wrap-cyan" aria-hidden="true">🚀</div>
-            <div>
-              <h3 class="text-white font-bold text-xl leading-tight">Kptar Business</h3>
-              <span class="text-xs font-bold px-2 py-0.5 rounded-full mt-1 inline-block" style="background:rgba(27,184,216,0.1);color:#1BB8D8;border:1px solid rgba(27,184,216,0.25);">B2B · IA · Growth</span>
-            </div>
-          </div>
-          <p class="text-gray-400 text-sm leading-relaxed mb-5 font-light">
-            El <strong class="text-gray-200 font-semibold">núcleo operativo de inteligencia comercial B2B</strong> para la aceleración del crecimiento empresarial mediante automatización avanzada y prospección inteligente.
-          </p>
-          <div class="rounded-xl p-4 mb-5 space-y-3" style="background:rgba(27,184,216,0.04);border:1px solid rgba(27,184,216,0.1);">
-            <p class="text-xs font-bold uppercase tracking-widest mb-3" style="color:#1BB8D8;">✦ Highlights</p>
-            <div class="flex items-start gap-2.5">
-              <span class="flex-shrink-0 w-4 h-4 rounded-full flex items-center justify-center mt-0.5" style="background:rgba(27,184,216,0.15);border:1px solid rgba(27,184,216,0.4);">
-                <svg class="w-2.5 h-2.5" fill="none" stroke="#1BB8D8" stroke-width="3" viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg>
-              </span>
-              <p class="text-gray-400 text-xs leading-relaxed"><strong class="text-gray-200 font-medium">Gestión automatizada de redes sociales corporativas</strong> potenciada por IA para el posicionamiento orgánico y crecimiento de marca.</p>
-            </div>
-            <div class="flex items-start gap-2.5">
-              <span class="flex-shrink-0 w-4 h-4 rounded-full flex items-center justify-center mt-0.5" style="background:rgba(27,184,216,0.15);border:1px solid rgba(27,184,216,0.4);">
-                <svg class="w-2.5 h-2.5" fill="none" stroke="#1BB8D8" stroke-width="3" viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg>
-              </span>
-              <p class="text-gray-400 text-xs leading-relaxed"><strong class="text-gray-200 font-medium">Motor inteligente de prospección pasivo-agresiva</strong> que automatiza la captación activa de clientes de alto impacto en el sector B2B.</p>
-            </div>
-          </div>
-          <div class="flex flex-wrap gap-1.5">
-            <span class="tech-badge" style="font-size:10px;padding:3px 8px;letter-spacing:0.4px;">PROSPECCIÓN CON IA</span>
-            <span class="tech-badge" style="font-size:10px;padding:3px 8px;letter-spacing:0.4px;">MARKETING AUTOMATION</span>
-            <span class="tech-badge" style="font-size:10px;padding:3px 8px;letter-spacing:0.4px;">CRECIMIENTO B2B</span>
-          </div>
-        </div>
-
-        <!-- Safe School -->
-        <div class="glass-card rounded-2xl p-8 reveal reveal-delay-2">
-          <div class="flex items-start gap-4 mb-5">
-            <div class="icon-wrap-orange" aria-hidden="true">🎓</div>
-            <div>
-              <h3 class="text-white font-bold text-xl leading-tight">Safe School</h3>
-              <span class="text-xs font-bold px-2 py-0.5 rounded-full mt-1 inline-block" style="background:rgba(244,124,32,0.12);color:#F47C20;border:1px solid rgba(244,124,32,0.25);">EdTech · IA Cognitiva</span>
-            </div>
-          </div>
-          <p class="text-gray-400 text-sm leading-relaxed mb-5 font-light">
-            Plataforma integral de <strong class="text-gray-200 font-semibold">gestión escolar y control administrativo</strong> para instituciones educativas. Centraliza y automatiza la relación operativa entre la institución y la comunidad escolar.
-          </p>
-          <div class="rounded-xl p-4 mb-5 space-y-3" style="background:rgba(244,124,32,0.04);border:1px solid rgba(244,124,32,0.1);">
-            <p class="text-xs font-bold uppercase tracking-widest mb-3" style="color:#F47C20;">✦ Highlights</p>
-            <div class="flex items-start gap-2.5">
-              <span class="flex-shrink-0 w-4 h-4 rounded-full flex items-center justify-center mt-0.5" style="background:rgba(27,184,216,0.15);border:1px solid rgba(27,184,216,0.4);">
-                <svg class="w-2.5 h-2.5" fill="none" stroke="#1BB8D8" stroke-width="3" viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg>
-              </span>
-              <p class="text-gray-400 text-xs leading-relaxed"><strong class="text-gray-200 font-medium">Aprendizaje cognitivo basado en IA</strong> para el seguimiento personalizado del rendimiento estudiantil y detección de patrones de desempeño.</p>
-            </div>
-            <div class="flex items-start gap-2.5">
-              <span class="flex-shrink-0 w-4 h-4 rounded-full flex items-center justify-center mt-0.5" style="background:rgba(27,184,216,0.15);border:1px solid rgba(27,184,216,0.4);">
-                <svg class="w-2.5 h-2.5" fill="none" stroke="#1BB8D8" stroke-width="3" viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg>
-              </span>
-              <p class="text-gray-400 text-xs leading-relaxed"><strong class="text-gray-200 font-medium">Gestión centralizada de inscripciones y cuotas</strong> con canales de comunicación directa entre directores, docentes y representantes.</p>
-            </div>
-          </div>
-          <div class="flex flex-wrap gap-1.5">
-            <span class="tech-badge" style="font-size:10px;padding:3px 8px;letter-spacing:0.4px;">INTELIGENCIA COGNITIVA</span>
-            <span class="tech-badge" style="font-size:10px;padding:3px 8px;letter-spacing:0.4px;">CONTROL ACADÉMICO</span>
-            <span class="tech-badge" style="font-size:10px;padding:3px 8px;letter-spacing:0.4px;">PLATAFORMA ESCOLAR</span>
-          </div>
-        </div>
-
-        <!-- Condominios -->
-        <div class="glass-card glass-card-cyan rounded-2xl p-8 reveal reveal-delay-1">
-          <div class="flex items-start gap-4 mb-5">
-            <div class="icon-wrap-cyan" aria-hidden="true">🏢</div>
-            <div>
-              <h3 class="text-white font-bold text-xl leading-tight">Condominios</h3>
-              <span class="text-xs font-bold px-2 py-0.5 rounded-full mt-1 inline-block" style="background:rgba(27,184,216,0.1);color:#1BB8D8;border:1px solid rgba(27,184,216,0.25);">PropTech · Domótica</span>
-            </div>
-          </div>
-          <p class="text-gray-400 text-sm leading-relaxed mb-5 font-light">
-            Plataforma <strong class="text-gray-200 font-semibold">multi-tenant de transparencia financiera y administración residencial</strong> para juntas de condominio, optimizada para un despliegue y configuración ágil.
-          </p>
-          <div class="rounded-xl p-4 mb-5 space-y-3" style="background:rgba(27,184,216,0.04);border:1px solid rgba(27,184,216,0.1);">
-            <p class="text-xs font-bold uppercase tracking-widest mb-3" style="color:#1BB8D8;">✦ Highlights</p>
-            <div class="flex items-start gap-2.5">
-              <span class="flex-shrink-0 w-4 h-4 rounded-full flex items-center justify-center mt-0.5" style="background:rgba(27,184,216,0.15);border:1px solid rgba(27,184,216,0.4);">
-                <svg class="w-2.5 h-2.5" fill="none" stroke="#1BB8D8" stroke-width="3" viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg>
-              </span>
-              <p class="text-gray-400 text-xs leading-relaxed"><strong class="text-gray-200 font-medium">Ledger financiero transparente</strong> para la carga mensual de planillas de gastos comunes, estados de cuenta, alícuotas y reportes de cobro.</p>
-            </div>
-            <div class="flex items-start gap-2.5">
-              <span class="flex-shrink-0 w-4 h-4 rounded-full flex items-center justify-center mt-0.5" style="background:rgba(27,184,216,0.15);border:1px solid rgba(27,184,216,0.4);">
-                <svg class="w-2.5 h-2.5" fill="none" stroke="#1BB8D8" stroke-width="3" viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg>
-              </span>
-              <p class="text-gray-400 text-xs leading-relaxed"><span class="text-xs font-bold" style="color:#1BB8D8;">En el horizonte →</span> Integración de <strong class="text-gray-200 font-medium">domótica avanzada e IA</strong> para la automatización y gestión de hogares inteligentes.</p>
-            </div>
-          </div>
-          <div class="flex flex-wrap gap-1.5">
-            <span class="tech-badge" style="font-size:10px;padding:3px 8px;letter-spacing:0.4px;">TRANSPARENCIA FINANCIERA</span>
-            <span class="tech-badge" style="font-size:10px;padding:3px 8px;letter-spacing:0.4px;">DOMÓTICA &amp; IA</span>
-            <span class="tech-badge" style="font-size:10px;padding:3px 8px;letter-spacing:0.4px;">GESTIÓN RESIDENCIAL</span>
-          </div>
-        </div>
-
-        <!-- Alas Viw -->
-        <div class="glass-card rounded-2xl p-8 reveal reveal-delay-2">
-          <div class="flex items-start gap-4 mb-5">
-            <div class="icon-wrap-orange" aria-hidden="true">🌟</div>
-            <div>
-              <h3 class="text-white font-bold text-xl leading-tight">Alas Viw</h3>
-              <span class="text-xs font-bold px-2 py-0.5 rounded-full mt-1 inline-block" style="background:rgba(244,124,32,0.12);color:#F47C20;border:1px solid rgba(244,124,32,0.25);">Social · AdMob · Impacto</span>
-            </div>
-          </div>
-          <p class="text-gray-400 text-sm leading-relaxed mb-5 font-light">
-            Aplicación móvil masiva orientada al <strong class="text-gray-200 font-semibold">beneficio social</strong> que ofrece un servicio de prevención funeraria <strong class="text-gray-200 font-semibold">100% gratuito</strong> para el usuario, financiado bajo un modelo publicitario eficiente.
-          </p>
-          <div class="rounded-xl p-4 mb-5 space-y-3" style="background:rgba(244,124,32,0.04);border:1px solid rgba(244,124,32,0.1);">
-            <p class="text-xs font-bold uppercase tracking-widest mb-3" style="color:#F47C20;">✦ Highlights</p>
-            <div class="flex items-start gap-2.5">
-              <span class="flex-shrink-0 w-4 h-4 rounded-full flex items-center justify-center mt-0.5" style="background:rgba(27,184,216,0.15);border:1px solid rgba(27,184,216,0.4);">
-                <svg class="w-2.5 h-2.5" fill="none" stroke="#1BB8D8" stroke-width="3" viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg>
-              </span>
-              <p class="text-gray-400 text-xs leading-relaxed"><strong class="text-gray-200 font-medium">Alto valor percibido y tracción orgánica masiva</strong> al resolver una necesidad crítica mediante el acceso gratuito a servicios de prevención funeraria.</p>
-            </div>
-            <div class="flex items-start gap-2.5">
-              <span class="flex-shrink-0 w-4 h-4 rounded-full flex items-center justify-center mt-0.5" style="background:rgba(27,184,216,0.15);border:1px solid rgba(27,184,216,0.4);">
-                <svg class="w-2.5 h-2.5" fill="none" stroke="#1BB8D8" stroke-width="3" viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg>
-              </span>
-              <p class="text-gray-400 text-xs leading-relaxed"><strong class="text-gray-200 font-medium">Monetización pasiva de alto volumen</strong> sustentada en la retención constante y la exposición estratégica a impresiones de Google AdMob.</p>
-            </div>
-          </div>
-          <div class="flex flex-wrap gap-1.5">
-            <span class="tech-badge" style="font-size:10px;padding:3px 8px;letter-spacing:0.4px;">PREVENCIÓN GRATUITA</span>
-            <span class="tech-badge" style="font-size:10px;padding:3px 8px;letter-spacing:0.4px;">GOOGLE ADMOB</span>
-            <span class="tech-badge" style="font-size:10px;padding:3px 8px;letter-spacing:0.4px;">IMPACTO SOCIAL</span>
-          </div>
-        </div>
-
-        <!-- CTA card -->
-        <div class="rounded-2xl p-8 reveal reveal-delay-3 flex flex-col justify-center items-center text-center"
-             style="background:linear-gradient(135deg,rgba(244,124,32,0.08) 0%,rgba(27,184,216,0.08) 100%);border:1px solid rgba(244,124,32,0.15);border-radius:20px;">
-          <div class="text-4xl mb-4" aria-hidden="true">🚀</div>
-          <h3 class="text-white font-bold text-xl mb-3">¿Tu industria aún no está aquí?</h3>
-          <p class="text-gray-400 text-sm mb-6 font-light leading-relaxed">
-            Somos un Venture Builder activo. Si tienes una idea de negocio tecnológico en Latinoamérica, hablemos sobre co-desarrollo y participación accionaria.
-          </p>
-          <a href="#contacto" class="btn-primary" style="font-size:14px;padding:10px 24px;">Proponer Vertical →</a>
-        </div>
       </div>
     </div>
   </section>
 
-  <div class="divider"></div>
+  <div class="hairline-divider"></div>
 
-  <!-- ARCHITECTURE SECTION -->
-  <section id="arquitectura" class="py-28 px-6 section-bg-cyan" aria-label="Arquitectura tecnológica">
-    <div class="max-w-7xl mx-auto">
-      <div class="text-center mb-20">
-        <div class="reveal inline-flex items-center gap-2 mb-6">
-          <span class="tech-badge">● Stack Técnico</span>
+  <!-- ARCHITECTURE SECTION ("LA VENTAJA TÉCNICA") -->
+  <section id="arquitectura" class="relative py-28 px-6 bg-obsidian-950" aria-label="Arquitectura tecnológica">
+    <div class="max-w-6xl mx-auto">
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="reveal mb-4">
+          <span class="eyebrow-badge">
+            <span class="w-1.5 h-1.5 rounded-full bg-brand-cyan"></span>
+            02 // ARQUITECTURA DE INGENIERÍA
+          </span>
         </div>
-        <h2 class="reveal reveal-delay-1 font-black text-white mb-6 leading-tight" style="font-size:clamp(2rem,5vw,3.5rem);">
-          La <span class="gradient-text-cyan">Ventaja</span> Técnica
+        <h2 class="reveal reveal-delay-1 display-heading font-extrabold text-white mb-5 leading-tight" style="font-size: clamp(2rem, 4.5vw, 3.1rem);">
+          La <span class="text-gradient-cyan">Ventaja</span> Técnica
         </h2>
-        <p class="reveal reveal-delay-2 text-gray-400 text-lg max-w-2xl mx-auto font-light leading-relaxed">
-          Una infraestructura diseñada para la velocidad de lanzamiento, la eficiencia operativa y la
-          escalabilidad sin límites técnicos dentro del ecosistema Kptar.
+        <p class="reveal reveal-delay-2 text-slate-400 text-base sm:text-lg leading-relaxed">
+          Una infraestructura diseñada para la velocidad de lanzamiento, la eficiencia operativa y la escalabilidad sin límites técnicos dentro del ecosistema Kptar.
         </p>
       </div>
 
-      <div class="grid lg:grid-cols-3 gap-8 mb-16">
+      <!-- 3 Engineering Pillars -->
+      <div class="grid lg:grid-cols-3 gap-6 mb-14">
 
-        <!-- Pillar 1: Supabase -->
-        <div class="pillar-card reveal">
-          <div class="flex items-center gap-3 mb-6">
-            <div class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl" style="background:rgba(27,184,216,0.1);border:1px solid rgba(27,184,216,0.2);" aria-hidden="true">🗄️</div>
-            <div>
-              <h3 class="text-white font-bold text-lg leading-tight">Backend Unificado</h3>
-              <span class="gradient-text-cyan text-sm font-semibold">Supabase + PostgreSQL</span>
+        <!-- Pillar 1: Supabase + PostgreSQL -->
+        <div class="surface-card surface-card-cyan rounded-2xl p-7 reveal">
+          <div class="flex items-center justify-between mb-6">
+            <div class="flex items-center gap-3.5">
+              <div class="icon-box-cyan" aria-hidden="true">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="#1BB8D8" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <ellipse cx="12" cy="5" rx="9" ry="3" fill="rgba(27,184,216,0.15)"/>
+                  <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+                  <path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3" stroke="#F47C20"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-outfit font-bold text-white text-lg leading-tight">Backend Unificado</h3>
+                <span class="font-mono text-xs text-brand-cyanLight">Supabase + PostgreSQL</span>
+              </div>
             </div>
+            <span class="font-mono text-[11px] text-slate-500">SYS-01</span>
           </div>
-          <p class="text-gray-400 text-sm leading-relaxed mb-6 font-light">
-            Arquitectura relacional centralizada sobre <strong class="text-gray-300 font-semibold">Supabase</strong> con aislamiento de esquemas lógicos multitenant. Cada vertical opera en su propio <code class="text-cyan-400 bg-cyan-400/10 px-1.5 py-0.5 rounded text-xs">schema</code> PostgreSQL, garantizando separación de datos sin costos de infraestructura independiente.
+
+          <p class="text-slate-400 text-sm leading-relaxed mb-6">
+            Arquitectura relacional centralizada sobre <strong class="text-slate-200 font-semibold">Supabase</strong> con aislamiento de esquemas lógicos multitenant. Cada vertical opera en su propio <code class="font-mono text-brand-cyanLight bg-brand-cyan/10 border border-brand-cyan/20 px-1.5 py-0.5 rounded text-xs">schema</code> PostgreSQL, garantizando separación de datos sin costos de infraestructura independiente.
           </p>
-          <div class="space-y-3">
-            <div class="arch-step">
-              <div class="arch-num cyan">01</div>
+
+          <div class="space-y-2.5">
+            <div class="eng-step">
+              <div class="eng-index eng-index-cyan">01</div>
               <div>
                 <div class="text-white text-sm font-semibold">Row Level Security (RLS)</div>
-                <div class="text-gray-500 text-xs mt-0.5">Aislamiento de datos por tenant a nivel de fila, sin lógica de aplicación extra.</div>
+                <div class="text-slate-400 text-xs mt-0.5 leading-relaxed">Aislamiento de datos por tenant a nivel de fila, sin lógica de aplicación extra.</div>
               </div>
             </div>
-            <div class="arch-step">
-              <div class="arch-num cyan">02</div>
+            <div class="eng-step">
+              <div class="eng-index eng-index-cyan">02</div>
               <div>
                 <div class="text-white text-sm font-semibold">Realtime &amp; Edge Functions</div>
-                <div class="text-gray-500 text-xs mt-0.5">Actualizaciones en tiempo real vía WebSockets y lógica serverless en el edge.</div>
+                <div class="text-slate-400 text-xs mt-0.5 leading-relaxed">Actualizaciones en tiempo real vía WebSockets y lógica serverless en el edge.</div>
               </div>
             </div>
-            <div class="arch-step">
-              <div class="arch-num cyan">03</div>
+            <div class="eng-step">
+              <div class="eng-index eng-index-cyan">03</div>
               <div>
-                <div class="text-white text-sm font-semibold">Auth JWT unificado</div>
-                <div class="text-gray-500 text-xs mt-0.5">Un solo sistema de autenticación para todos los productos del portafolio.</div>
+                <div class="text-white text-sm font-semibold">Auth JWT Unificado</div>
+                <div class="text-slate-400 text-xs mt-0.5 leading-relaxed">Un solo sistema de autenticación para todos los productos del portafolio.</div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Pillar 2: PWA -->
-        <div class="pillar-card cyan reveal reveal-delay-1">
-          <div class="flex items-center gap-3 mb-6">
-            <div class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl" style="background:rgba(244,124,32,0.1);border:1px solid rgba(244,124,32,0.2);" aria-hidden="true">⚡</div>
-            <div>
-              <h3 class="text-white font-bold text-lg leading-tight">Progressive Web Apps</h3>
-              <span class="gradient-text-orange text-sm font-semibold">Offline · Instalable · Nativo</span>
+        <!-- Pillar 2: Arquitectura Multi-Plataforma (PWA & Mobile Nativo) -->
+        <div class="surface-card rounded-2xl p-7 reveal reveal-delay-1">
+          <div class="flex items-center justify-between mb-6">
+            <div class="flex items-center gap-3.5">
+              <div class="icon-box-orange" aria-hidden="true">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="#F47C20" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" fill="rgba(244,124,32,0.15)"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-outfit font-bold text-white text-lg leading-tight">Despliegue Multi-Plataforma</h3>
+                <span class="font-mono text-xs text-brand-orangeLight">PWA · Mobile Nativo · Web</span>
+              </div>
             </div>
+            <span class="font-mono text-[11px] text-slate-500">SYS-02</span>
           </div>
-          <p class="text-gray-400 text-sm leading-relaxed mb-6 font-light">
-            Todas las soluciones Kptar son <strong class="text-gray-300 font-semibold">PWA de primera clase</strong> con capacidades offline completas, instalables nativamente desde el navegador en <strong class="text-gray-300">PC, Android e iOS</strong> sin pasar por App Stores. Un solo codebase, experiencia nativa en todos los dispositivos.
+
+          <p class="text-slate-400 text-sm leading-relaxed mb-6">
+            Ecosistema híbrido que combina <strong class="text-slate-200 font-semibold">Progressive Web Apps (PWA)</strong> con capacidades offline completas y <strong class="text-slate-200 font-semibold">aplicaciones móviles nativas para Android e iOS</strong>, garantizando rendimiento óptimo y alcance masivo según la naturaleza de cada vertical.
           </p>
-          <div class="space-y-3">
-            <div class="arch-step">
-              <div class="arch-num">01</div>
+
+          <div class="space-y-2.5">
+            <div class="eng-step">
+              <div class="eng-index eng-index-orange">01</div>
               <div>
-                <div class="text-white text-sm font-semibold">Service Workers Avanzados</div>
-                <div class="text-gray-500 text-xs mt-0.5">Caché inteligente con estrategias <code class="text-orange-400/80 text-xs">stale-while-revalidate</code> para respuesta instantánea.</div>
+                <div class="text-white text-sm font-semibold">Service Workers &amp; Caché Inteligente</div>
+                <div class="text-slate-400 text-xs mt-0.5 leading-relaxed">Estrategias <code class="font-mono text-brand-orangeLight text-[11px]">stale-while-revalidate</code> e IndexedDB para operación continua.</div>
               </div>
             </div>
-            <div class="arch-step">
-              <div class="arch-num">02</div>
+            <div class="eng-step">
+              <div class="eng-index eng-index-orange">02</div>
               <div>
-                <div class="text-white text-sm font-semibold">IndexedDB Offline-First</div>
-                <div class="text-gray-500 text-xs mt-0.5">Sincronización en background cuando se restaura la conectividad de red.</div>
+                <div class="text-white text-sm font-semibold">Apps Nativas (Android &amp; iOS)</div>
+                <div class="text-slate-400 text-xs mt-0.5 leading-relaxed">Compilación nativa e integración directa con SDKs móviles y redes de monetización como AdMob.</div>
               </div>
             </div>
-            <div class="arch-step">
-              <div class="arch-num">03</div>
+            <div class="eng-step">
+              <div class="eng-index eng-index-orange">03</div>
               <div>
-                <div class="text-white text-sm font-semibold">Web Push Notifications</div>
-                <div class="text-gray-500 text-xs mt-0.5">Notificaciones nativas del sistema operativo sin app de terceros requerida.</div>
+                <div class="text-white text-sm font-semibold">Push Notifications Multi-Canal</div>
+                <div class="text-slate-400 text-xs mt-0.5 leading-relaxed">Notificaciones en tiempo real tanto en dispositivos móviles nativos como en navegadores de escritorio.</div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Pillar 3: Payments -->
-        <div class="pillar-card reveal reveal-delay-2">
-          <div class="flex items-center gap-3 mb-6">
-            <div class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl" style="background:rgba(27,184,216,0.1);border:1px solid rgba(27,184,216,0.2);" aria-hidden="true">🔐</div>
-            <div>
-              <h3 class="text-white font-bold text-lg leading-tight">Flujo de Pagos Seguro</h3>
-              <span class="gradient-text-cyan text-sm font-semibold">Validación Manual · Latam</span>
+        <!-- Pillar 3: Flujo de Pagos Seguro -->
+        <div class="surface-card surface-card-cyan rounded-2xl p-7 reveal reveal-delay-2">
+          <div class="flex items-center justify-between mb-6">
+            <div class="flex items-center gap-3.5">
+              <div class="icon-box-cyan" aria-hidden="true">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="#1BB8D8" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2" fill="rgba(27,184,216,0.14)"/>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="#F47C20"/>
+                  <circle cx="12" cy="16" r="1"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-outfit font-bold text-white text-lg leading-tight">Flujo de Pagos Seguro</h3>
+                <span class="font-mono text-xs text-brand-cyanLight">Validación Manual · LATAM</span>
+              </div>
             </div>
+            <span class="font-mono text-[11px] text-slate-500">SYS-03</span>
           </div>
-          <p class="text-gray-400 text-sm leading-relaxed mb-6 font-light">
-            Sistema de <strong class="text-gray-300 font-semibold">validación directa de referencias de transacciones móviles</strong> adaptado a la realidad bancaria latinoamericana. Elimina intermediarios innecesarios, maximizando la conversión en mercados con infraestructura fintech limitada o emergente.
+
+          <p class="text-slate-400 text-sm leading-relaxed mb-6">
+            Sistema de <strong class="text-slate-200 font-semibold">validación directa de referencias de transacciones móviles</strong> adaptado a la realidad bancaria latinoamericana. Elimina intermediarios innecesarios, maximizando la conversión en mercados con infraestructura fintech emergente.
           </p>
-          <div class="space-y-3">
-            <div class="arch-step">
-              <div class="arch-num cyan">01</div>
+
+          <div class="space-y-2.5">
+            <div class="eng-step">
+              <div class="eng-index eng-index-cyan">01</div>
               <div>
-                <div class="text-white text-sm font-semibold">Verificación por referencia</div>
-                <div class="text-gray-500 text-xs mt-0.5">Validación automática de números de transacción de pagos móviles regionales.</div>
+                <div class="text-white text-sm font-semibold">Verificación por Referencia</div>
+                <div class="text-slate-400 text-xs mt-0.5 leading-relaxed">Validación automática de números de transacción de pagos móviles regionales.</div>
               </div>
             </div>
-            <div class="arch-step">
-              <div class="arch-num cyan">02</div>
+            <div class="eng-step">
+              <div class="eng-index eng-index-cyan">02</div>
               <div>
-                <div class="text-white text-sm font-semibold">Auditoría completa</div>
-                <div class="text-gray-500 text-xs mt-0.5">Trazabilidad total de cada transacción con log inmutable y cifrado AES-256.</div>
+                <div class="text-white text-sm font-semibold">Auditoría Completa</div>
+                <div class="text-slate-400 text-xs mt-0.5 leading-relaxed">Trazabilidad total de cada transacción con log inmutable y cifrado AES-256.</div>
               </div>
             </div>
-            <div class="arch-step">
-              <div class="arch-num cyan">03</div>
+            <div class="eng-step">
+              <div class="eng-index eng-index-cyan">03</div>
               <div>
-                <div class="text-white text-sm font-semibold">Multi-método de pago</div>
-                <div class="text-gray-500 text-xs mt-0.5">Pago móvil, transferencias bancarias, efectivo supervisado y divisas digitales.</div>
+                <div class="text-white text-sm font-semibold">Multi-Método de Pago</div>
+                <div class="text-slate-400 text-xs mt-0.5 leading-relaxed">Pago móvil, transferencias bancarias, efectivo supervisado y divisas digitales.</div>
               </div>
             </div>
           </div>
         </div>
+
       </div>
 
-      <!-- Tech stack badges -->
-      <div class="reveal text-center">
-        <p class="text-gray-500 text-sm font-semibold uppercase tracking-widest mb-6">Stack tecnológico central</p>
-        <div class="flex flex-wrap justify-center gap-3">
-          <span class="tech-badge">Supabase</span>
-          <span class="tech-badge">PostgreSQL</span>
-          <span class="tech-badge">React / Vue</span>
-          <span class="tech-badge">PWA / Service Workers</span>
-          <span class="tech-badge">IndexedDB</span>
-          <span class="tech-badge">Edge Functions</span>
-          <span class="tech-badge">WebSockets</span>
-          <span class="tech-badge">JWT Auth</span>
-          <span class="tech-badge">Google AdMob</span>
-          <span class="tech-badge">Row Level Security</span>
+      <!-- Central Tech Stack Dock -->
+      <div class="reveal surface-card rounded-2xl p-6 sm:p-8 text-center">
+        <div class="font-mono text-xs text-slate-400 uppercase tracking-widest mb-5">
+          // STACK TECNOLÓGICO CENTRAL DEL ECOSISTEMA
         </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- ABOUT SECTION -->
-  <section id="nosotros" class="py-28 px-6" style="background:#0B0F19;" aria-label="Sobre Kptar App C.A.">
-    <div class="max-w-7xl mx-auto">
-      <div class="grid lg:grid-cols-2 gap-16 items-center">
-        <div>
-          <div class="reveal inline-flex items-center gap-2 mb-6">
-            <span class="tech-badge">● Quiénes somos</span>
-          </div>
-          <h2 class="reveal reveal-delay-1 font-black text-white mb-6 leading-tight" style="font-size:clamp(2rem,5vw,3.2rem);">
-            Un Venture Builder<br>
-            <span class="gradient-text">tecnológico nativo</span><br>
-            de Latinoamérica
-          </h2>
-          <div class="brand-line w-20 mb-8 reveal reveal-delay-2"></div>
-          <p class="reveal reveal-delay-2 text-gray-400 text-base leading-relaxed mb-6 font-light">
-            <strong class="text-gray-200 font-semibold">Kptar App C.A.</strong> es una empresa tecnológica de capital venezolano con visión regional. Nuestra misión es democratizar el acceso a software empresarial de clase mundial para organizaciones latinoamericanas, eliminando las barreras de costo y complejidad que históricamente han limitado la transformación digital en la región.
-          </p>
-          <p class="reveal reveal-delay-3 text-gray-400 text-base leading-relaxed mb-10 font-light">
-            Operamos como un <strong class="text-gray-200 font-semibold">Venture Builder</strong>: diseñamos, financiamos y desarrollamos internamente múltiples productos tecnológicos en paralelo, compartiendo infraestructura, talento e inteligencia de mercado. Este modelo nos permite lanzar verticales de negocio con velocidad y eficiencia que los enfoques de startup tradicional no pueden igualar.
-          </p>
-          <div class="grid grid-cols-2 gap-4 reveal reveal-delay-4">
-            <div class="glass p-5 rounded-xl">
-              <div class="text-2xl mb-2">🎯</div>
-              <div class="text-white font-semibold text-sm mb-1">Enfoque producto</div>
-              <div class="text-gray-500 text-xs font-light">Cada solución nace de una necesidad real no resuelta en el mercado LATAM.</div>
-            </div>
-            <div class="glass p-5 rounded-xl">
-              <div class="text-2xl mb-2">🔗</div>
-              <div class="text-white font-semibold text-sm mb-1">Infraestructura compartida</div>
-              <div class="text-gray-500 text-xs font-light">Un backend, múltiples productos. Eficiencia máxima de costos operativos.</div>
-            </div>
-            <div class="glass p-5 rounded-xl">
-              <div class="text-2xl mb-2">📈</div>
-              <div class="text-white font-semibold text-sm mb-1">Escalabilidad regional</div>
-              <div class="text-gray-500 text-xs font-light">Arquitectura multitenant lista para operar en cualquier país de la región.</div>
-            </div>
-            <div class="glass p-5 rounded-xl">
-              <div class="text-2xl mb-2">🤝</div>
-              <div class="text-white font-semibold text-sm mb-1">Modelo de alianzas</div>
-              <div class="text-gray-500 text-xs font-light">Abiertos a co-inversión, licenciamiento e integración con partners estratégicos.</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="reveal reveal-delay-2 flex flex-col items-center justify-center gap-8">
-          <div class="relative anim-float">
-            <div class="w-52 h-52 rounded-3xl overflow-hidden border-2 flex items-center justify-center"
-                 style="border-color:rgba(244,124,32,0.25);background:rgba(17,24,39,0.8);box-shadow:0 0 60px rgba(244,124,32,0.15),0 0 120px rgba(27,184,216,0.08),inset 0 1px 0 rgba(255,255,255,0.05);">
-              <img src="assets/kptar-logo.png" alt="Kptar App C.A." class="w-36 h-36 object-contain"
-                   onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
-              <div style="display:none;width:100px;height:100px;background:linear-gradient(135deg,#F47C20,#1BB8D8);border-radius:50%;align-items:center;justify-content:center;font-weight:900;font-size:48px;color:white;">K</div>
-            </div>
-            <div class="absolute inset-0 rounded-3xl" style="box-shadow:0 0 0 1px rgba(244,124,32,0.15),0 0 0 20px rgba(244,124,32,0.04);" aria-hidden="true"></div>
-          </div>
-
-          <div class="glass p-8 rounded-2xl w-full max-w-md text-center">
-            <div class="text-white font-black text-2xl mb-1">Kptar App C.A.</div>
-            <div class="gradient-text-cyan text-sm font-semibold mb-4">Venture Builder Tecnológico</div>
-            <div class="divider mb-4"></div>
-            <div class="grid grid-cols-3 gap-4 text-center">
-              <div>
-                <div class="text-orange-400 font-black text-xl">2024</div>
-                <div class="text-gray-500 text-xs font-medium">Fundación</div>
-              </div>
-              <div>
-                <div class="gradient-text-cyan font-black text-xl">LATAM</div>
-                <div class="text-gray-500 text-xs font-medium">Mercado</div>
-              </div>
-              <div>
-                <div class="text-orange-400 font-black text-xl">SaaS</div>
-                <div class="text-gray-500 text-xs font-medium">Modelo</div>
-              </div>
-            </div>
-          </div>
+        <div class="flex flex-wrap justify-center gap-2.5">
+          <span class="tech-dock-item"><span class="w-1.5 h-1.5 rounded-full bg-brand-cyan"></span>Supabase</span>
+          <span class="tech-dock-item"><span class="w-1.5 h-1.5 rounded-full bg-brand-orange"></span>PostgreSQL</span>
+          <span class="tech-dock-item"><span class="w-1.5 h-1.5 rounded-full bg-brand-cyan"></span>React / Vue</span>
+          <span class="tech-dock-item"><span class="w-1.5 h-1.5 rounded-full bg-brand-orange"></span>Android &amp; iOS Nativo</span>
+          <span class="tech-dock-item"><span class="w-1.5 h-1.5 rounded-full bg-brand-cyan"></span>PWA / Service Workers</span>
+          <span class="tech-dock-item"><span class="w-1.5 h-1.5 rounded-full bg-brand-orange"></span>IndexedDB</span>
+          <span class="tech-dock-item"><span class="w-1.5 h-1.5 rounded-full bg-brand-cyan"></span>Edge Functions</span>
+          <span class="tech-dock-item"><span class="w-1.5 h-1.5 rounded-full bg-brand-orange"></span>WebSockets</span>
+          <span class="tech-dock-item"><span class="w-1.5 h-1.5 rounded-full bg-brand-cyan"></span>JWT Auth</span>
+          <span class="tech-dock-item"><span class="w-1.5 h-1.5 rounded-full bg-brand-orange"></span>Google AdMob</span>
+          <span class="tech-dock-item"><span class="w-1.5 h-1.5 rounded-full bg-brand-cyan"></span>Row Level Security</span>
         </div>
       </div>
     </div>
   </section>
 
-  <div class="divider"></div>
+  <div class="hairline-divider"></div>
 
-  <!-- CONTACT SECTION -->
-  <section id="contacto" class="py-28 px-6" style="background:radial-gradient(ellipse 80% 60% at 50% 100%,rgba(244,124,32,0.07) 0%,transparent 70%),#0B0F19;" aria-label="Sección de contacto">
-    <div class="max-w-7xl mx-auto">
-      <div class="grid lg:grid-cols-2 gap-16 items-start">
-        <div>
-          <div class="reveal inline-flex items-center gap-2 mb-6">
-            <span class="tech-badge">● Contacto</span>
+  <!-- ABOUT / MANIFESTO SECTION -->
+  <section id="nosotros" class="relative py-28 px-6 bg-obsidian-900" aria-label="Sobre Kptar App C.A.">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <!-- Left Column: Narrative & 4 Pillars -->
+        <div class="lg:col-span-7">
+          <div class="reveal mb-4">
+            <span class="eyebrow-badge">
+              <span class="w-1.5 h-1.5 rounded-full bg-brand-orange"></span>
+              03 // ADN DE INGENIERÍA
+            </span>
           </div>
-          <h2 class="reveal reveal-delay-1 font-black text-white mb-6 leading-tight" style="font-size:clamp(2rem,5vw,3.2rem);">
-            Conectemos y<br>
-            <span class="gradient-text">Construyamos Juntos</span>
+          <h2 class="reveal reveal-delay-1 display-heading font-extrabold text-white mb-6 leading-tight" style="font-size: clamp(2rem, 4.5vw, 3rem);">
+            Ingeniería de Software<br />
+            <span class="text-gradient-brand">de clase mundial</span><br />
+            desde Latinoamérica
           </h2>
-          <p class="reveal reveal-delay-2 text-gray-400 text-lg mb-12 font-light leading-relaxed">
-            Estamos abiertos a <strong class="text-gray-200 font-semibold">alianzas estratégicas</strong>, acuerdos de licenciamiento, co-inversión y conversaciones con inversionistas que compartan nuestra visión del futuro digital latinoamericano.
+
+          <p class="reveal reveal-delay-2 text-slate-300 text-base leading-relaxed mb-5">
+            <strong class="text-white font-semibold">Kptar App C.A.</strong> es una empresa de tecnología y consultora de ingeniería de software especializada en construir soluciones empresariales de misión crítica. Transformamos requerimientos complejos en productos digitales robustos, seguros y listos para escalar.
+          </p>
+          <p class="reveal reveal-delay-3 text-slate-400 text-base leading-relaxed mb-9">
+            A diferencia de las agencias tradicionales, contamos con un <strong class="text-slate-200 font-semibold">portafolio propio de plataformas SaaS y aplicaciones móviles en producción</strong>. Aplicamos esa misma arquitectura probada, velocidad de ejecución e integración de Inteligencia Artificial en cada proyecto que desarrollamos para nuestros clientes.
+          </p>
+
+          <!-- 4 Strategic Principles -->
+          <div class="grid sm:grid-cols-2 gap-4 reveal reveal-delay-4">
+            <div class="surface-card rounded-xl p-5">
+              <div class="flex items-center gap-3 mb-2.5">
+                <div class="w-9 h-9 rounded-lg bg-brand-orange/10 border border-brand-orange/25 flex items-center justify-center text-brand-orange">
+                  <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                </div>
+                <div class="font-outfit font-bold text-white text-sm">Ejecución End-to-End</div>
+              </div>
+              <p class="text-slate-400 text-xs leading-relaxed">Desde el diseño de arquitectura y UI/UX hasta el despliegue en la nube y tiendas móviles.</p>
+            </div>
+
+            <div class="surface-card surface-card-cyan rounded-xl p-5">
+              <div class="flex items-center gap-3 mb-2.5">
+                <div class="w-9 h-9 rounded-lg bg-brand-cyan/10 border border-brand-cyan/25 flex items-center justify-center text-brand-cyan">
+                  <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="8" height="8" rx="2"/><rect x="14" y="2" width="8" height="8" rx="2"/><rect x="8" y="14" width="8" height="8" rx="2"/><path d="M6 10v2a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-2"/></svg>
+                </div>
+                <div class="font-outfit font-bold text-white text-sm">Arquitectura Probada</div>
+              </div>
+              <p class="text-slate-400 text-xs leading-relaxed">Infraestructura cloud eficiente, segura por diseño (RLS) y optimizada en costos operativos.</p>
+            </div>
+
+            <div class="surface-card surface-card-cyan rounded-xl p-5">
+              <div class="flex items-center gap-3 mb-2.5">
+                <div class="w-9 h-9 rounded-lg bg-brand-cyan/10 border border-brand-cyan/25 flex items-center justify-center text-brand-cyan">
+                  <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                </div>
+                <div class="font-outfit font-bold text-white text-sm">Escalabilidad Empresarial</div>
+              </div>
+              <p class="text-slate-400 text-xs leading-relaxed">Sistemas multitenant y multi-plataforma preparados para alto tráfico y crecimiento regional.</p>
+            </div>
+
+            <div class="surface-card rounded-xl p-5">
+              <div class="flex items-center gap-3 mb-2.5">
+                <div class="w-9 h-9 rounded-lg bg-brand-orange/10 border border-brand-orange/25 flex items-center justify-center text-brand-orange">
+                  <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
+                <div class="font-outfit font-bold text-white text-sm">Consultoría &amp; Licencias</div>
+              </div>
+              <p class="text-slate-400 text-xs leading-relaxed">Desarrollo de software a medida, integración de IA y licenciamiento de nuestras plataformas.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Corporate Identity Blueprint Card -->
+        <div class="lg:col-span-5 reveal reveal-delay-2">
+          <div class="surface-card rounded-2xl p-8 relative overflow-hidden">
+            <!-- Top Blueprint Metadata -->
+            <div class="flex items-center justify-between pb-5 mb-8 border-b border-white/[0.06]">
+              <span class="font-mono text-[11px] text-slate-400">CORP ID // KPTAR-CA</span>
+              <span class="inline-flex items-center gap-1.5 font-mono text-[11px] text-emerald-400">
+                <span class="status-dot !w-1.5 !h-1.5"></span> OPERATIVO
+              </span>
+            </div>
+
+            <!-- Emblem Showcase -->
+            <div class="flex flex-col items-center justify-center my-4">
+              <div class="relative p-5 rounded-3xl bg-obsidian-900 border border-white/10 shadow-2xl mb-6">
+                <div class="w-28 h-28 rounded-2xl bg-white flex items-center justify-center p-3 shadow-inner">
+                  <img src="assets/kptar-logo.png" alt="Kptar App C.A." class="w-full h-full object-contain"
+                       onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+                  <div style="display:none;width:80px;height:80px;background:linear-gradient(135deg,#F47C20,#1BB8D8);border-radius:16px;align-items:center;justify-content:center;font-weight:900;font-size:36px;color:white;">K</div>
+                </div>
+              </div>
+
+              <div class="font-outfit font-extrabold text-white text-2xl tracking-tight">Kptar App C.A.</div>
+              <div class="font-mono text-xs text-brand-cyanLight mt-1 mb-6">INGENIERÍA DE SOFTWARE &amp; CONSULTORÍA</div>
+            </div>
+
+            <!-- Telemetry Grid -->
+            <div class="grid grid-cols-3 gap-3 pt-6 border-t border-white/[0.06] text-center">
+              <div class="p-3 rounded-xl bg-obsidian-900/70 border border-white/[0.05]">
+                <div class="font-mono font-bold text-brand-orangeLight text-lg">2024</div>
+                <div class="font-mono text-[10px] text-slate-400 uppercase mt-0.5">Fundación</div>
+              </div>
+              <div class="p-3 rounded-xl bg-obsidian-900/70 border border-white/[0.05]">
+                <div class="font-mono font-bold text-brand-cyanLight text-lg">LATAM</div>
+                <div class="font-mono text-[10px] text-slate-400 uppercase mt-0.5">Alcance</div>
+              </div>
+              <div class="p-3 rounded-xl bg-obsidian-900/70 border border-white/[0.05]">
+                <div class="font-mono font-bold text-white text-lg">B2B</div>
+                <div class="font-mono text-[10px] text-slate-400 uppercase mt-0.5">Soluciones</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="hairline-divider"></div>
+
+  <!-- CONTACT & CORPORATE CREDENTIAL SECTION -->
+  <section id="contacto" class="relative py-28 px-6 bg-obsidian-950" aria-label="Sección de contacto">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid lg:grid-cols-12 gap-12 lg:gap-14 items-start">
+
+        <!-- Left Column: Direct Channels & Verified Fiscal Credential -->
+        <div class="lg:col-span-5">
+          <div class="reveal mb-4">
+            <span class="eyebrow-badge">
+              <span class="w-1.5 h-1.5 rounded-full bg-brand-cyan"></span>
+              04 // INICIAR UN PROYECTO
+            </span>
+          </div>
+          <h2 class="reveal reveal-delay-1 display-heading font-extrabold text-white mb-5 leading-tight" style="font-size: clamp(2rem, 4.2vw, 2.85rem);">
+            Hablemos de tu<br />
+            <span class="text-gradient-brand">Próximo Sistema</span>
+          </h2>
+          <p class="reveal reveal-delay-2 text-slate-400 text-base mb-8 leading-relaxed">
+            Cuéntanos tus requerimientos técnicos o de negocio. Desarrollamos <strong class="text-slate-200 font-semibold">software a medida, plataformas SaaS, aplicaciones móviles e integraciones de IA</strong>, además de ofrecer licenciamiento de nuestras soluciones en producción.
           </p>
 
           <div class="space-y-4 reveal reveal-delay-3">
-
-            <!-- WhatsApp Business — CTA principal -->
-            <a href="https://wa.me/584146883105?text=Hola%20Kptar%20App%2C%20estoy%20interesado%20en%20conocer%20m%C3%A1s%20sobre%20su%20ecosistema%20de%20soluciones."
+            <!-- WhatsApp Business Primary CTA Card -->
+            <a href="https://wa.me/584146883105?text=Hola%20Kptar%20App%2C%20quiero%20conversar%20sobre%20el%20desarrollo%20de%20un%20proyecto%20de%20software."
                target="_blank" rel="noopener noreferrer"
-               class="flex items-center gap-4 p-5 rounded-xl transition-all group"
-               style="background:rgba(37,211,102,0.07);border:1px solid rgba(37,211,102,0.25);text-decoration:none;">
-              <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
-                   style="background:rgba(37,211,102,0.12);border:1px solid rgba(37,211,102,0.3);font-size:22px;">💬</div>
-              <div class="flex-1 min-w-0">
-                <div class="text-white font-bold text-sm">WhatsApp Business</div>
-                <div class="text-sm font-semibold mt-0.5" style="color:#25D366;">+58 414-688-3105</div>
-                <div class="text-gray-500 text-xs mt-0.5 font-light">Atención directa · Respuesta inmediata</div>
+               class="surface-card rounded-xl p-5 flex items-center gap-4 group block no-underline"
+               style="border-color: rgba(37, 211, 102, 0.28); background: linear-gradient(135deg, rgba(37, 211, 102, 0.08) 0%, rgba(11, 16, 27, 0.9) 100%);">
+              <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 bg-[#25D366]/15 border border-[#25D366]/35 text-[#25D366]">
+                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                  <path d="M12.031 0C5.397 0 0 5.397 0 12.031c0 2.124.553 4.197 1.604 6.014L0 24l6.126-1.579c1.761.96 3.754 1.467 5.905 1.467 6.634 0 12.031-5.397 12.031-12.031S18.665 0 12.031 0zm.016 22.041c-1.83 0-3.623-.492-5.187-1.422l-.372-.222-3.856.993 1.015-3.759-.244-.388A9.972 9.972 0 012.04 12.03c0-5.508 4.483-9.991 9.991-9.991 5.508 0 9.991 4.483 9.991 9.991 0 5.508-4.483 9.991-9.975 9.991zm5.474-7.487c-.3-.15-1.774-.875-2.049-.975-.275-.1-.475-.15-.675.15-.2.3-.775.975-.95 1.175-.175.2-.35.225-.65.075-.3-.15-1.266-.466-2.412-1.488-.892-.795-1.494-1.777-1.669-2.077-.175-.3-.018-.462.13-.61.135-.133.3-.35.45-.525.15-.175.2-.3.3-.5.1-.2.05-.375-.025-.525-.075-.15-.675-1.625-.925-2.225-.244-.583-.493-.504-.675-.513-.173-.008-.372-.008-.572-.008-.2 0-.525.075-.8.375s-1.05 1.025-1.05 2.5 1.075 2.9 1.225 3.1c.15.2 2.114 3.228 5.122 4.527.716.31 1.275.495 1.711.633.719.228 1.373.196 1.89.119.577-.086 1.774-.725 2.024-1.425.25-.7.25-1.3.175-1.425-.075-.125-.275-.2-.575-.35z"/>
+                </svg>
               </div>
-              <div class="flex-shrink-0 px-3 py-1.5 rounded-full text-xs font-bold transition-all group-hover:scale-105"
-                   style="background:rgba(37,211,102,0.15);border:1px solid rgba(37,211,102,0.35);color:#25D366;">Chatear →</div>
+              <div class="flex-1 min-w-0">
+                <div class="text-white font-semibold text-sm">WhatsApp Business</div>
+                <div class="font-mono text-sm font-semibold text-[#25D366] mt-0.5">+58 414-688-3105</div>
+                <div class="text-slate-400 text-xs mt-0.5">Atención técnica y comercial directa</div>
+              </div>
+              <div class="flex-shrink-0 font-mono text-xs font-semibold px-3 py-1.5 rounded-lg bg-[#25D366]/15 border border-[#25D366]/35 text-[#25D366] group-hover:translate-x-0.5 transition-transform">
+                Chatear →
+              </div>
             </a>
 
-            <!-- Email de respaldo -->
-            <a href="mailto:info@kptar.com"
-               class="flex items-center gap-4 p-5 glass rounded-xl transition-all group"
-               style="text-decoration:none;">
-              <div class="w-12 h-12 rounded-xl flex items-center justify-center text-xl flex-shrink-0"
-                   style="background:rgba(244,124,32,0.1);border:1px solid rgba(244,124,32,0.2);">✉️</div>
-              <div class="flex-1 min-w-0">
-                <div class="text-white font-semibold text-sm">Correo de contacto</div>
-                <div class="gradient-text-orange text-sm font-medium">info@kptar.com</div>
-                <div class="text-gray-600 text-xs mt-0.5 font-light">Canal de respaldo corporativo</div>
+            <!-- Corporate Email Card -->
+            <a href="mailto:info@kptar.com" class="surface-card rounded-xl p-5 flex items-center gap-4 group block no-underline">
+              <div class="icon-box-orange">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="#F47C20" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="20" height="16" x="2" y="4" rx="2" fill="rgba(244,124,32,0.12)"/>
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                </svg>
               </div>
-              <div class="ml-auto text-gray-600 group-hover:text-orange-400 transition-colors flex-shrink-0">→</div>
+              <div class="flex-1 min-w-0">
+                <div class="text-white font-semibold text-sm">Correo Electrónico Corporativo</div>
+                <div class="font-mono text-sm text-brand-orangeLight mt-0.5">info@kptar.com</div>
+                <div class="text-slate-400 text-xs mt-0.5">Recepción de especificaciones y pliegos técnicos</div>
+              </div>
+              <svg class="w-4 h-4 text-slate-500 group-hover:text-brand-orange group-hover:translate-x-0.5 transition-all" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             </a>
 
-            <!-- Dirección fiscal -->
-            <div class="flex items-start gap-4 p-5 glass rounded-xl">
-              <div class="w-12 h-12 rounded-xl flex items-center justify-center text-xl flex-shrink-0 mt-0.5"
-                   style="background:rgba(27,184,216,0.1);border:1px solid rgba(27,184,216,0.2);">🏛️</div>
-              <div class="flex-1 min-w-0">
-                <div class="text-white font-semibold text-sm mb-1">Dirección Fiscal</div>
-                <div class="text-gray-400 text-xs leading-relaxed font-light">
-                  Calle 72 con Av. Bella Vista, Edif. Clodomira<br>
-                  Piso 2 · Oficina 302<br>
-                  <span class="gradient-text-cyan font-semibold">Maracaibo, Estado Zulia · Venezuela</span>
+            <!-- Verified Corporate Fiscal Credential Card -->
+            <div class="surface-card surface-card-cyan rounded-xl p-5">
+              <div class="flex items-center justify-between pb-3.5 mb-3.5 border-b border-white/[0.06]">
+                <div class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-brand-cyan" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                  <span class="font-mono text-[11px] font-semibold text-white uppercase tracking-wider">Credencial Fiscal Corporativa</span>
                 </div>
+                <span class="font-mono text-[10px] px-2 py-0.5 rounded bg-brand-cyan/10 text-brand-cyanLight border border-brand-cyan/25">VERIFICADA</span>
               </div>
-            </div>
 
-            <!-- RIF + Tipos colaboración -->
-            <div class="grid grid-cols-2 gap-4">
-              <div class="flex items-center gap-3 p-4 rounded-xl"
-                   style="background:rgba(244,124,32,0.06);border:1px solid rgba(244,124,32,0.15);">
-                <div class="w-9 h-9 rounded-lg flex items-center justify-center text-base flex-shrink-0"
-                     style="background:rgba(244,124,32,0.12);border:1px solid rgba(244,124,32,0.2);">📋</div>
-                <div>
-                  <div class="text-gray-500 text-xs font-medium uppercase tracking-wide">RIF</div>
-                  <div class="text-white font-bold text-sm">J-50324674-0</div>
+              <div class="space-y-3">
+                <div class="flex items-start gap-3">
+                  <svg class="w-4 h-4 text-slate-400 flex-shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                  <div class="text-xs text-slate-300 leading-relaxed">
+                    Calle 72 con Av. Bella Vista, Edif. Clodomira, Piso 2 · Oficina 302<br />
+                    <span class="text-brand-cyanLight font-medium">Maracaibo, Estado Zulia · Venezuela</span>
+                  </div>
                 </div>
-              </div>
-              <div class="flex items-center gap-3 p-4 rounded-xl"
-                   style="background:rgba(27,184,216,0.06);border:1px solid rgba(27,184,216,0.15);">
-                <div class="w-9 h-9 rounded-lg flex items-center justify-center text-base flex-shrink-0"
-                     style="background:rgba(27,184,216,0.12);border:1px solid rgba(27,184,216,0.2);">🤝</div>
-                <div>
-                  <div class="text-gray-500 text-xs font-medium uppercase tracking-wide">Colaboraciones</div>
-                  <div class="gradient-text-cyan font-semibold text-xs">Alianzas · Inversión</div>
+
+                <div class="grid grid-cols-2 gap-3 pt-2">
+                  <div class="p-3 rounded-lg bg-obsidian-900/90 border border-white/[0.06]">
+                    <div class="font-mono text-[10px] text-slate-400 uppercase">Registro Fiscal (RIF)</div>
+                    <div class="font-mono font-bold text-white text-xs mt-0.5">J-50324674-0</div>
+                  </div>
+                  <div class="p-3 rounded-lg bg-obsidian-900/90 border border-white/[0.06]">
+                    <div class="font-mono text-[10px] text-slate-400 uppercase">Servicios</div>
+                    <div class="font-mono font-semibold text-brand-orangeLight text-xs mt-0.5">Desarrollo · SaaS</div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -995,110 +1410,120 @@
           </div>
         </div>
 
-        <div class="reveal reveal-delay-2">
-          <div class="glass-card rounded-2xl p-8 lg:p-10" style="border-color:rgba(244,124,32,0.12);">
-            <h3 class="text-white font-bold text-xl mb-2">Formulario de Contacto Corporativo</h3>
-            <p class="text-gray-500 text-sm mb-8 font-light">Cuéntanos tu propuesta. Te respondemos en menos de 24 horas.</p>
+        <!-- Right Column: Corporate Contact Form -->
+        <div class="lg:col-span-7 reveal reveal-delay-2">
+          <div class="surface-card rounded-2xl p-8 sm:p-10">
+            <div class="flex items-center justify-between pb-6 mb-7 border-b border-white/[0.06]">
+              <div>
+                <h3 class="font-outfit font-bold text-white text-xl">Solicitar Cotización o Consultoría Técnica</h3>
+                <p class="text-slate-400 text-sm mt-1">Describe tu proyecto o necesidad operativa. Tiempo de respuesta: &lt; 24 horas.</p>
+              </div>
+              <div class="hidden sm:flex icon-box-orange">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="#F47C20" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" fill="rgba(244,124,32,0.12)"/>
+                  <polyline points="14 2 14 8 20 8"/>
+                  <line x1="16" y1="13" x2="8" y2="13" stroke="#1BB8D8"/>
+                  <line x1="16" y1="17" x2="8" y2="17" stroke="#1BB8D8"/>
+                </svg>
+              </div>
+            </div>
 
             <form id="contact-form" novalidate>
               <div class="grid sm:grid-cols-2 gap-5 mb-5">
                 <div>
-                  <label for="contact-name" class="block text-gray-400 text-sm font-semibold mb-2">Nombre completo <span style="color:#F47C20;">*</span></label>
+                  <label for="contact-name" class="form-label">Nombre completo <span class="text-brand-orange">*</span></label>
                   <input id="contact-name" type="text" class="form-input" placeholder="Ej: María González" required autocomplete="name" />
                 </div>
                 <div>
-                  <label for="contact-company" class="block text-gray-400 text-sm font-semibold mb-2">Empresa / Organización</label>
-                  <input id="contact-company" type="text" class="form-input" placeholder="Ej: Acme Corp C.A." autocomplete="organization" />
+                  <label for="contact-company" class="form-label">Empresa / Organización</label>
+                  <input id="contact-company" type="text" class="form-input" placeholder="Ej: Grupo Empresarial C.A." autocomplete="organization" />
                 </div>
               </div>
-              <div class="mb-5">
-                <label for="contact-email" class="block text-gray-400 text-sm font-semibold mb-2">Correo electrónico <span style="color:#F47C20;">*</span></label>
-                <input id="contact-email" type="email" class="form-input" placeholder="tu@empresa.com" required autocomplete="email" />
-              </div>
-              <div class="mb-5">
-                <label for="contact-type" class="block text-gray-400 text-sm font-semibold mb-2">Tipo de consulta <span style="color:#F47C20;">*</span></label>
-                <select id="contact-type" class="form-input" required style="cursor:pointer;">
-                  <option value="" disabled selected style="background:#111827;color:#9CA3AF;">Selecciona una opción</option>
-                  <option value="alianza" style="background:#111827;">Alianza estratégica</option>
-                  <option value="inversion" style="background:#111827;">Oportunidad de inversión</option>
-                  <option value="licencia" style="background:#111827;">Licenciamiento institucional</option>
-                  <option value="producto" style="background:#111827;">Información sobre un producto</option>
-                  <option value="codesarrollo" style="background:#111827;">Co-desarrollo de nueva vertical</option>
-                  <option value="otro" style="background:#111827;">Otro</option>
-                </select>
-              </div>
-              <div class="mb-8">
-                <label for="contact-message" class="block text-gray-400 text-sm font-semibold mb-2">Mensaje <span style="color:#F47C20;">*</span></label>
-                <textarea id="contact-message" class="form-input" placeholder="Describe brevemente tu propuesta, empresa, y el tipo de colaboración que tienes en mente..." required></textarea>
+
+              <div class="grid sm:grid-cols-2 gap-5 mb-5">
+                <div>
+                  <label for="contact-email" class="form-label">Correo electrónico <span class="text-brand-orange">*</span></label>
+                  <input id="contact-email" type="email" class="form-input" placeholder="nombre@empresa.com" required autocomplete="email" />
+                </div>
+                <div>
+                  <label for="contact-type" class="form-label">Tipo de servicio <span class="text-brand-orange">*</span></label>
+                  <select id="contact-type" class="form-input cursor-pointer" required>
+                    <option value="" disabled selected style="background:#0B101B;color:#64748B;">Selecciona una opción</option>
+                    <option value="desarrollo" style="background:#0B101B;">Desarrollo de software / plataforma a medida</option>
+                    <option value="mobile" style="background:#0B101B;">Desarrollo de aplicación móvil (Android / iOS / PWA)</option>
+                    <option value="ia" style="background:#0B101B;">Automatización e integración de Inteligencia Artificial</option>
+                    <option value="licencia" style="background:#0B101B;">Licenciamiento de un producto del portafolio Kptar</option>
+                    <option value="consultoria" style="background:#0B101B;">Consultoría de arquitectura cloud y bases de datos</option>
+                    <option value="otro" style="background:#0B101B;">Otro requerimiento técnico</option>
+                  </select>
+                </div>
               </div>
 
-              <div id="form-error" class="hidden mb-4 p-4 rounded-xl text-sm font-medium" style="background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.25);color:#f87171;" role="alert" aria-live="polite"></div>
-              <div id="form-success" class="hidden mb-4 p-4 rounded-xl text-sm font-medium" style="background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.25);color:#4ade80;" role="status" aria-live="polite"></div>
+              <div class="mb-6">
+                <label for="contact-message" class="form-label">Detalles del Proyecto <span class="text-brand-orange">*</span></label>
+                <textarea id="contact-message" class="form-input" placeholder="Cuéntanos sobre los objetivos del proyecto, funcionalidades clave o el sistema que deseas implementar..." required></textarea>
+              </div>
 
-              <button type="submit" id="form-submit" class="btn-primary w-full" style="border-radius:12px;font-size:16px;padding:16px;border:none;cursor:pointer;">
-                <span id="submit-text">Enviar Mensaje →</span>
-                <span id="submit-loading" class="hidden">Enviando…</span>
+              <div id="form-error" class="hidden mb-5 p-4 rounded-xl text-xs font-mono" style="background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);color:#F87171;" role="alert" aria-live="polite"></div>
+              <div id="form-success" class="hidden mb-5 p-4 rounded-xl text-xs font-mono" style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.3);color:#34D399;" role="status" aria-live="polite"></div>
+
+              <button type="submit" id="form-submit" class="btn-primary w-full !py-3.5 !text-base">
+                <span id="submit-text">Enviar Solicitud de Proyecto</span>
+                <span id="submit-loading" class="hidden font-mono text-sm">PROCESANDO ENVÍO...</span>
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+                </svg>
               </button>
-              <p class="text-center text-gray-600 text-xs mt-4 font-light">
-                Al enviar, aceptas que Kptar App C.A. se ponga en contacto para discutir tu propuesta.
+
+              <p class="text-center text-slate-500 text-xs mt-4">
+                Al enviar este formulario, autorizas a Kptar App C.A. a contactarte para evaluar tu requerimiento técnico.
               </p>
             </form>
           </div>
         </div>
+
       </div>
     </div>
   </section>
 
-  <div class="divider"></div>
+  <div class="hairline-divider"></div>
 
   <!-- FOOTER -->
-  <footer class="py-16 px-6" style="background:#080C14;" role="contentinfo">
-    <div class="max-w-7xl mx-auto">
-      <div class="grid md:grid-cols-4 gap-12 mb-12">
-        <div class="md:col-span-2">
-          <div class="flex items-center gap-3 mb-6">
-            <div class="logo-circle" style="width:52px;height:52px;background:#fff;border-radius:50%;overflow:hidden;flex-shrink:0;">
-              <img src="assets/kptar-logo.png" alt="Kptar App C.A." onerror="this.style.display='none';this.parentElement.innerHTML='<span style=\'font-weight:900;color:#F47C20;font-size:20px;\'>K</span>';" style="width:100%;height:100%;object-fit:contain;padding:4px;" />
+  <footer class="py-16 px-6 bg-obsidian-950" role="contentinfo">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid md:grid-cols-12 gap-10 pb-12 border-b border-white/[0.06]">
+        <!-- Brand & Fiscal Summary -->
+        <div class="md:col-span-6">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="logo-badge">
+              <img src="assets/kptar-logo.png" alt="Kptar App C.A." onerror="this.style.display='none';this.parentElement.innerHTML='<span style=\'font-family:Outfit;font-weight:900;color:#F47C20;font-size:18px;\'>K</span>';" />
             </div>
             <div>
-              <div class="text-white font-bold text-lg leading-none">kptar<span class="gradient-text-orange">app</span></div>
-              <div class="text-xs text-gray-600 font-medium">C.A. — Venture Builder</div>
+              <div class="font-outfit font-bold text-white text-lg leading-none">kptar<span class="text-gradient-orange">app</span></div>
+              <div class="font-mono text-[10px] text-slate-500 uppercase tracking-wider mt-1">Kptar App C.A. — Software Engineering</div>
             </div>
           </div>
-          <p class="text-gray-500 text-sm leading-relaxed font-light mb-5 max-w-sm">
-            Ecosistema Venture Builder tecnológico en Latinoamérica. Diseñamos y escalamos arquitecturas SaaS multitenant para transformar industrias enteras en la región.
+
+          <p class="text-slate-400 text-sm leading-relaxed mb-6 max-w-md">
+            Empresa de tecnología y consultora de ingeniería de software de alto nivel. Diseñamos, desarrollamos y escalamos plataformas SaaS multitenant, aplicaciones móviles nativas y soluciones con IA.
           </p>
-          <!-- Datos corporativos -->
-          <div class="space-y-2 mb-5">
-            <div class="flex items-start gap-2">
-              <span class="text-gray-600 text-xs mt-0.5 flex-shrink-0">📍</span>
-              <span class="text-gray-600 text-xs font-light leading-relaxed">
-                Calle 72 con Av. Bella Vista, Edif. Clodomira,<br>Piso 2 · Of. 302 — Maracaibo, Edo. Zulia
-              </span>
+
+          <div class="space-y-2 font-mono text-xs text-slate-400">
+            <div class="flex items-center gap-2.5">
+              <svg class="w-3.5 h-3.5 text-brand-cyan flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Calle 72 con Av. Bella Vista, Edif. Clodomira, Piso 2 · Of. 302 — Maracaibo, Zulia</span>
             </div>
-            <div class="flex items-center gap-2">
-              <span class="text-gray-600 text-xs flex-shrink-0">🪪</span>
-              <span class="text-gray-600 text-xs font-light">RIF: <strong class="text-gray-500 font-semibold">J-50324674-0</strong></span>
+            <div class="flex items-center gap-2.5">
+              <svg class="w-3.5 h-3.5 text-brand-orange flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><line x1="7" y1="8" x2="17" y2="8"/><line x1="7" y1="12" x2="13" y2="12"/></svg>
+              <span>RIF: <strong class="text-slate-200 font-semibold">J-50324674-0</strong></span>
             </div>
-            <div class="flex items-center gap-2">
-              <span class="text-gray-600 text-xs flex-shrink-0">💬</span>
-              <a href="https://wa.me/584146883105?text=Hola%20Kptar%20App%2C%20estoy%20interesado%20en%20conocer%20m%C3%A1s%20sobre%20su%20ecosistema%20de%20soluciones."
-                 target="_blank" rel="noopener noreferrer"
-                 class="text-xs font-semibold transition-colors" style="color:#25D366;text-decoration:none;">+58 414-688-3105 (WhatsApp)</a>
-            </div>
-            <div class="flex items-center gap-2">
-              <span class="text-gray-600 text-xs flex-shrink-0">✉️</span>
-              <a href="mailto:info@kptar.com" class="text-gray-500 text-xs font-light hover:text-orange-400 transition-colors" style="text-decoration:none;">info@kptar.com</a>
-            </div>
-          </div>
-          <div class="flex items-center gap-2">
-            <span class="glow-dot" style="width:6px;height:6px;"></span>
-            <span class="text-gray-500 text-xs font-medium">Venture Builder activo · Venezuela 🇻🇪</span>
           </div>
         </div>
-        <div>
-          <h4 class="text-white font-semibold text-sm uppercase tracking-wider mb-5">Portafolio</h4>
-          <ul class="space-y-3">
+
+        <!-- Portfolio Links -->
+        <div class="md:col-span-3">
+          <h4 class="font-mono text-xs font-semibold text-white uppercase tracking-wider mb-4">Casos de Estudio</h4>
+          <ul class="space-y-2.5">
             <li><a href="#ecosistema" class="footer-link">Jurídico HC</a></li>
             <li><a href="#ecosistema" class="footer-link">Kptar Business</a></li>
             <li><a href="#ecosistema" class="footer-link">Safe School</a></li>
@@ -1106,50 +1531,57 @@
             <li><a href="#ecosistema" class="footer-link">Alas Viw</a></li>
           </ul>
         </div>
-        <div>
-          <h4 class="text-white font-semibold text-sm uppercase tracking-wider mb-5">Empresa</h4>
-          <ul class="space-y-3">
-            <li><a href="#nosotros" class="footer-link">Quiénes somos</a></li>
-            <li><a href="#arquitectura" class="footer-link">Tecnología</a></li>
-            <li><a href="#contacto" class="footer-link">Alianzas</a></li>
-            <li><a href="#contacto" class="footer-link">Inversión</a></li>
+
+        <!-- Corporate Links -->
+        <div class="md:col-span-3">
+          <h4 class="font-mono text-xs font-semibold text-white uppercase tracking-wider mb-4">Servicios &amp; Empresa</h4>
+          <ul class="space-y-2.5">
+            <li><a href="#nosotros" class="footer-link">ADN de Ingeniería</a></li>
+            <li><a href="#arquitectura" class="footer-link">Capacidades Técnicas</a></li>
+            <li><a href="#contacto" class="footer-link">Cotizar Proyecto</a></li>
             <li>
-              <a href="https://wa.me/584146883105?text=Hola%20Kptar%20App%2C%20estoy%20interesado%20en%20conocer%20m%C3%A1s%20sobre%20su%20ecosistema%20de%20soluciones."
+              <a href="https://wa.me/584146883105?text=Hola%20Kptar%20App%2C%20quiero%20conversar%20sobre%20el%20desarrollo%20de%20un%20proyecto%20de%20software."
                  target="_blank" rel="noopener noreferrer"
-                 class="footer-link" style="color:#25D366;">WhatsApp Business</a>
+                 class="footer-link !text-[#25D366] font-medium">+58 414-688-3105 (WhatsApp)</a>
             </li>
-            <li><a href="mailto:info@kptar.com" class="footer-link">info@kptar.com</a></li>
+            <li><a href="mailto:info@kptar.com" class="footer-link font-mono text-xs">info@kptar.com</a></li>
           </ul>
         </div>
       </div>
-      <div class="divider mb-8"></div>
-      <div class="flex flex-col md:flex-row items-center justify-between gap-4">
-        <div class="flex flex-col gap-1">
-          <p class="text-gray-600 text-sm font-light">
-            © 2024–2026 <strong class="text-gray-500">Kptar App C.A.</strong> — Todos los derechos reservados.
-          </p>
-          <p class="text-gray-700 text-xs font-light">
-            RIF: J-50324674-0 &nbsp;·&nbsp; Maracaibo, Estado Zulia, Venezuela
-          </p>
+
+      <!-- Bottom Copyright Bar -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="text-slate-500 text-xs">
+          © 2024–2026 <strong class="text-slate-300 font-semibold">Kptar App C.A.</strong> — Todos los derechos reservados.
         </div>
-        <div class="flex flex-wrap items-center justify-center gap-4">
-          <a href="https://wa.me/584146883105?text=Hola%20Kptar%20App%2C%20estoy%20interesado%20en%20conocer%20m%C3%A1s%20sobre%20su%20ecosistema%20de%20soluciones."
-             target="_blank" rel="noopener noreferrer"
-             class="flex items-center gap-1.5 text-xs font-semibold transition-all hover:opacity-80"
-             style="color:#25D366;text-decoration:none;">💬 WhatsApp</a>
-          <a href="mailto:info@kptar.com" class="footer-link text-xs">info@kptar.com</a>
-          <span class="tech-badge" style="font-size:10px;padding:3px 8px;">Hecho en Venezuela 🇻🇪</span>
+        <div class="flex items-center gap-3">
+          <span class="inline-flex items-center gap-2 font-mono text-[11px] px-3 py-1 rounded-md bg-obsidian-800 border border-white/[0.07] text-slate-300">
+            <span class="status-dot !w-1.5 !h-1.5"></span>
+            INGENIERÍA VENEZOLANA · ALCANCE LATAM
+          </span>
         </div>
       </div>
     </div>
   </footer>
+
+  <!-- Floating WhatsApp Action -->
+  <a href="https://wa.me/584146883105?text=Hola%20Kptar%20App%2C%20quiero%20conversar%20sobre%20el%20desarrollo%20de%20un%20proyecto%20de%20software."
+     target="_blank" rel="noopener noreferrer"
+     class="fixed bottom-6 right-6 z-50 flex items-center gap-2.5 px-4 py-3 rounded-xl transition-all duration-300 hover:-translate-y-0.5"
+     style="background: linear-gradient(180deg, #25D366 0%, #1DA851 100%); color: #ffffff; border: 1px solid rgba(255,255,255,0.25); box-shadow: 0 10px 25px -5px rgba(37, 211, 102, 0.45), inset 0 1px 0 rgba(255,255,255,0.3); text-decoration: none;"
+     aria-label="Chatear por WhatsApp Business">
+    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+      <path d="M12.031 0C5.397 0 0 5.397 0 12.031c0 2.124.553 4.197 1.604 6.014L0 24l6.126-1.579c1.761.96 3.754 1.467 5.905 1.467 6.634 0 12.031-5.397 12.031-12.031S18.665 0 12.031 0zm.016 22.041c-1.83 0-3.623-.492-5.187-1.422l-.372-.222-3.856.993 1.015-3.759-.244-.388A9.972 9.972 0 012.04 12.03c0-5.508 4.483-9.991 9.991-9.991 5.508 0 9.991 4.483 9.991 9.991 0 5.508-4.483 9.991-9.975 9.991zm5.474-7.487c-.3-.15-1.774-.875-2.049-.975-.275-.1-.475-.15-.675.15-.2.3-.775.975-.95 1.175-.175.2-.35.225-.65.075-.3-.15-1.266-.466-2.412-1.488-.892-.795-1.494-1.777-1.669-2.077-.175-.3-.018-.462.13-.61.135-.133.3-.35.45-.525.15-.175.2-.3.3-.5.1-.2.05-.375-.025-.525-.075-.15-.675-1.625-.925-2.225-.244-.583-.493-.504-.675-.513-.173-.008-.372-.008-.572-.008-.2 0-.525.075-.8.375s-1.05 1.025-1.05 2.5 1.075 2.9 1.225 3.1c.15.2 2.114 3.228 5.122 4.527.716.31 1.275.495 1.711.633.719.228 1.373.196 1.89.119.577-.086 1.774-.725 2.024-1.425.25-.7.25-1.3.175-1.425-.075-.125-.275-.2-.575-.35z"/>
+    </svg>
+    <span class="font-semibold text-xs tracking-wide hidden sm:inline">WhatsApp Directo</span>
+  </a>
 
   <!-- JAVASCRIPT -->
   <script>
   (function () {
     'use strict';
 
-    /* 1. CIRCUIT CANVAS */
+    /* 1. SUBTLE ARCHITECTURAL CIRCUIT CANVAS */
     var canvas = document.getElementById('circuit-canvas');
     var ctx = canvas.getContext('2d');
     var nodes = [], W, H, animId;
@@ -1160,18 +1592,18 @@
     }
     function createNodes() {
       nodes = [];
-      var cols = Math.ceil(W / 75);
-      var rows = Math.ceil(H / 75);
+      var cols = Math.ceil(W / 96);
+      var rows = Math.ceil(H / 96);
       for (var i = 0; i < cols; i++) {
         for (var j = 0; j < rows; j++) {
-          if (Math.random() < 0.38) {
+          if (Math.random() < 0.32) {
             nodes.push({
-              x: i * 75 + (Math.random() * 30 - 15),
-              y: j * 75 + (Math.random() * 30 - 15),
+              x: i * 96 + (Math.random() * 24 - 12),
+              y: j * 96 + (Math.random() * 24 - 12),
               pulse: Math.random() * Math.PI * 2,
-              speed: 0.018 + Math.random() * 0.025,
-              radius: 1.5 + Math.random() * 1.8,
-              isOrange: Math.random() > 0.5
+              speed: 0.012 + Math.random() * 0.018,
+              radius: 1.2 + Math.random() * 1.2,
+              isOrange: Math.random() > 0.55
             });
           }
         }
@@ -1185,9 +1617,9 @@
         for (var j = i + 1; j < n.length; j++) {
           var dx = n[i].x - n[j].x;
           var dy = n[i].y - n[j].y;
-          var d = Math.sqrt(dx*dx + dy*dy);
-          if (d < 120) {
-            var alpha = (1 - d / 120) * 0.22;
+          var d = Math.sqrt(dx * dx + dy * dy);
+          if (d < 130) {
+            var alpha = (1 - d / 130) * 0.14;
             ctx.beginPath();
             ctx.moveTo(n[i].x, n[i].y);
             if (Math.abs(dx) > Math.abs(dy)) {
@@ -1197,27 +1629,28 @@
               ctx.lineTo(n[i].x, n[j].y);
               ctx.lineTo(n[j].x, n[j].y);
             }
-            ctx.strokeStyle = 'rgba(27,184,216,' + alpha + ')';
-            ctx.lineWidth = 0.7;
+            ctx.strokeStyle = 'rgba(27, 184, 216, ' + alpha + ')';
+            ctx.lineWidth = 0.65;
             ctx.stroke();
           }
         }
       }
       for (var i = 0; i < n.length; i++) {
         var pulse = (Math.sin(n[i].pulse) + 1) / 2;
-        var alpha = 0.35 + pulse * 0.65;
-        var r = n[i].radius + pulse * 1.8;
+        var alpha = 0.25 + pulse * 0.5;
+        var r = n[i].radius + pulse * 1.1;
         ctx.beginPath();
         ctx.arc(n[i].x, n[i].y, r, 0, Math.PI * 2);
         ctx.fillStyle = n[i].isOrange
-          ? 'rgba(244,124,32,' + alpha + ')'
-          : 'rgba(27,184,216,' + alpha + ')';
+          ? 'rgba(244, 124, 32, ' + alpha + ')'
+          : 'rgba(27, 184, 216, ' + alpha + ')';
         ctx.fill();
       }
       animId = requestAnimationFrame(drawFrame);
     }
     function initCanvas() {
-      resizeCanvas(); createNodes();
+      resizeCanvas();
+      createNodes();
       if (animId) cancelAnimationFrame(animId);
       drawFrame();
     }
@@ -1228,17 +1661,17 @@
     });
     initCanvas();
 
-    /* 2. NAVBAR SCROLL */
-    var navbar = document.getElementById('navbar');
+    /* 2. FLOATING NAVBAR SCROLL STATE */
+    var navCapsule = document.querySelector('.nav-capsule');
     window.addEventListener('scroll', function () {
-      if (window.scrollY > 60) {
-        navbar.querySelector('.glass').style.background = 'rgba(11,15,25,0.95)';
+      if (window.scrollY > 40) {
+        navCapsule.classList.add('scrolled');
       } else {
-        navbar.querySelector('.glass').style.background = '';
+        navCapsule.classList.remove('scrolled');
       }
     }, { passive: true });
 
-    /* 3. MOBILE MENU */
+    /* 3. MOBILE MENU TOGGLE */
     var toggle = document.getElementById('mobile-toggle');
     var menu   = document.getElementById('mobile-menu');
     var mIcon  = document.getElementById('menu-icon');
@@ -1261,7 +1694,7 @@
       });
     });
 
-    /* 4. SCROLL REVEAL */
+    /* 4. SCROLL REVEAL OBSERVER */
     var reveals = document.querySelectorAll('.reveal');
     var revObs = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
@@ -1270,17 +1703,17 @@
           revObs.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
     reveals.forEach(function (el) { revObs.observe(el); });
 
-    /* 5. KEYBOARD NAV */
+    /* 5. KEYBOARD ACCESSIBILITY FOCUS */
     var kbStyle = document.createElement('style');
-    kbStyle.textContent = '.keyboard-nav *:focus{outline:2px solid #F47C20!important;outline-offset:3px!important;border-radius:4px;}';
+    kbStyle.textContent = '.keyboard-nav *:focus{outline:2px solid #F47C20!important;outline-offset:3px!important;border-radius:6px;}';
     document.head.appendChild(kbStyle);
     document.addEventListener('keydown', function (e) { if (e.key === 'Tab') document.body.classList.add('keyboard-nav'); });
     document.addEventListener('mousedown', function () { document.body.classList.remove('keyboard-nav'); });
 
-    /* 6. CONTACT FORM */
+    /* 6. CORPORATE CONTACT FORM */
     var form    = document.getElementById('contact-form');
     var errEl   = document.getElementById('form-error');
     var succEl  = document.getElementById('form-success');
@@ -1301,11 +1734,11 @@
       var type    = document.getElementById('contact-type').value;
       var message = document.getElementById('contact-message').value.trim();
       if (!name || !email || !type || !message) {
-        showMsg(errEl, '\u26A0\uFE0F  Por favor completa todos los campos obligatorios.');
+        showMsg(errEl, '[ERROR] Por favor completa todos los campos obligatorios marcados con (*).');
         return;
       }
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        showMsg(errEl, '\u26A0\uFE0F  Ingresa un correo electrónico válido.');
+        showMsg(errEl, '[ERROR] Ingresa una dirección de correo electrónico corporativo válida.');
         return;
       }
       subBtn.disabled = true;
@@ -1316,12 +1749,12 @@
         subBtn.disabled = false;
         subTxt.classList.remove('hidden');
         subLoad.classList.add('hidden');
-        showMsg(succEl, '\u2705  \u00A1Mensaje enviado! El equipo Kptar se pondrá en contacto contigo en menos de 24 horas.');
+        showMsg(succEl, '[OK] Solicitud registrada. El equipo ejecutivo de Kptar App C.A. responderá en menos de 24 horas.');
         form.reset();
-      }, 1800);
+      }, 1500);
     });
 
-    /* 7. SMOOTH SCROLL */
+    /* 7. PRECISION SMOOTH SCROLL */
     document.querySelectorAll('a[href^="#"]').forEach(function (a) {
       a.addEventListener('click', function (e) {
         var href = a.getAttribute('href');
@@ -1329,41 +1762,14 @@
         var target = document.querySelector(href);
         if (target) {
           e.preventDefault();
-          var navH = document.querySelector('nav').offsetHeight;
-          var top  = target.getBoundingClientRect().top + window.scrollY - navH - 16;
+          var navH = document.getElementById('navbar').offsetHeight;
+          var top  = target.getBoundingClientRect().top + window.scrollY - navH - 12;
           window.scrollTo({ top: top, behavior: 'smooth' });
         }
       });
     });
 
-    /* 8. CARD TILT */
-    document.querySelectorAll('.glass-card').forEach(function (card) {
-      card.addEventListener('mousemove', function (e) {
-        var rect = card.getBoundingClientRect();
-        var x = (e.clientX - rect.left) / rect.width  - 0.5;
-        var y = (e.clientY - rect.top)  / rect.height - 0.5;
-        card.style.transform = 'translateY(-6px) rotateX(' + (y * -5) + 'deg) rotateY(' + (x * 5) + 'deg)';
-        card.style.transition = 'transform 0.1s ease';
-      });
-      card.addEventListener('mouseleave', function () {
-        card.style.transform = '';
-        card.style.transition = 'all 0.4s cubic-bezier(0.4,0,0.2,1)';
-      });
-    });
-
   }());
   </script>
-
-  <!-- Botón flotante de WhatsApp -->
-  <a href="https://wa.me/584146883105?text=Hola%20Kptar%20App%2C%20estoy%20interesado%20en%20conocer%20m%C3%A1s%20sobre%20su%20ecosistema%20de%20soluciones."
-     target="_blank" rel="noopener noreferrer"
-     class="fixed bottom-6 right-6 z-50 flex items-center gap-3 px-4 py-3 rounded-full shadow-2xl transition-all duration-300 hover:scale-105"
-     style="background:#25D366;color:#ffffff;box-shadow:0 10px 25px rgba(37,211,102,0.4);text-decoration:none;"
-     aria-label="Chatear por WhatsApp Business">
-    <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
-      <path d="M12.031 0C5.397 0 0 5.397 0 12.031c0 2.124.553 4.197 1.604 6.014L0 24l6.126-1.579c1.761.96 3.754 1.467 5.905 1.467 6.634 0 12.031-5.397 12.031-12.031S18.665 0 12.031 0zm.016 22.041c-1.83 0-3.623-.492-5.187-1.422l-.372-.222-3.856.993 1.015-3.759-.244-.388A9.972 9.972 0 012.04 12.03c0-5.508 4.483-9.991 9.991-9.991 5.508 0 9.991 4.483 9.991 9.991 0 5.508-4.483 9.991-9.975 9.991zm5.474-7.487c-.3-.15-1.774-.875-2.049-.975-.275-.1-.475-.15-.675.15-.2.3-.775.975-.95 1.175-.175.2-.35.225-.65.075-.3-.15-1.266-.466-2.412-1.488-.892-.795-1.494-1.777-1.669-2.077-.175-.3-.018-.462.13-.61.135-.133.3-.35.45-.525.15-.175.2-.3.3-.5.1-.2.05-.375-.025-.525-.075-.15-.675-1.625-.925-2.225-.244-.583-.493-.504-.675-.513-.173-.008-.372-.008-.572-.008-.2 0-.525.075-.8.375s-1.05 1.025-1.05 2.5 1.075 2.9 1.225 3.1c.15.2 2.114 3.228 5.122 4.527.716.31 1.275.495 1.711.633.719.228 1.373.196 1.89.119.577-.086 1.774-.725 2.024-1.425.25-.7.25-1.3.175-1.425-.075-.125-.275-.2-.575-.35z"/>
-    </svg>
-    <span class="font-bold text-sm hidden sm:inline">WhatsApp</span>
-  </a>
 </body>
 </html>
