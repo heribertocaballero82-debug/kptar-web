@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+  <meta name="description" content="Política de Privacidad de Kptar App C.A. (RIF: J-50324674-0) — Protección, confidencialidad y tratamiento de datos en la plataforma SaaS multitenant Kptar Business y sus integraciones con Meta Platforms (WhatsApp Business API, Instagram Graph API y Messenger)." />
+  <meta name="author" content="Kptar App C.A." />
+  <meta property="og:title" content="Política de Privacidad — Kptar App C.A. (Kptar Business)" />
+  <meta property="og:description" content="Política de Privacidad oficial de Kptar App C.A. (RIF: J-50324674-0) para la plataforma SaaS multitenant Kptar Business e integraciones con Meta Platforms." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://kptar.com/privacy" />
+  <link rel="canonical" href="https://kptar.com/privacy" />
+  <title>Política de Privacidad — Kptar App C.A.</title>
+
+  <!-- PWA Manifest & Icons -->
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="assets/kptar-logo.png" />
+  <meta name="theme-color" content="#060911" />
+
+  <!-- Google Fonts: Outfit (Display), Plus Jakarta Sans (Body/UI), JetBrains Mono (Technical/Metrics) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            outfit: ['Outfit', 'sans-serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            obsidian: {
+              950: '#04060C',
+              900: '#060911',
+              800: '#0B101B',
+              700: '#0F1626',
+              600: '#161F33',
+            },
+            brand: {
+              orange: '#F47C20',
+              orangeLight: '#FF9E44',
+              cyan: '#1BB8D8',
+              cyanLight: '#5CE1FF',
+            }
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #060911;
+      color: #E2E8F0;
+      scroll-behavior: smooth;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    body {
+      background-color: #060911;
+      overflow-x: hidden;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #060911; }
+    ::-webkit-scrollbar-thumb { background: #1E293B; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #F47C20; }
+    ::selection { background: rgba(244, 124, 32, 0.28); color: #ffffff; }
+
+    /* Architectural Background Grid & Ambient Lighting */
+    .bg-grid-pattern {
+      background-size: 48px 48px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+      mask-image: radial-gradient(ellipse 80% 60% at 50% 20%, #000 30%, transparent 100%);
+      -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 20%, #000 30%, transparent 100%);
+    }
+
+    .legal-surface {
+      background:
+        radial-gradient(ellipse 65% 40% at 50% -5%, rgba(244, 124, 32, 0.10) 0%, transparent 65%),
+        radial-gradient(ellipse 55% 40% at 85% 20%, rgba(27, 184, 216, 0.07) 0%, transparent 65%),
+        #060911;
+    }
+
+    /* Floating Navbar Capsule */
+    .nav-capsule {
+      background: rgba(11, 16, 27, 0.78);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow:
+        0 16px 40px -12px rgba(0, 0, 0, 0.65),
+        inset 0 1px 0 0 rgba(255, 255, 255, 0.11);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Enterprise Surface Cards & Specular Hairlines */
+    .surface-card {
+      position: relative;
+      background: linear-gradient(180deg, rgba(15, 22, 38, 0.78) 0%, rgba(11, 16, 27, 0.92) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow:
+        0 10px 30px -10px rgba(0, 0, 0, 0.55),
+        inset 0 1px 0 0 rgba(255, 255, 255, 0.09);
+      overflow: hidden;
+    }
+    .surface-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 15%; right: 15%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.22), transparent);
+      opacity: 0.75;
+      pointer-events: none;
+    }
+
+    .display-heading {
+      font-family: 'Outfit', sans-serif;
+      letter-spacing: -0.03em;
+    }
+    .text-gradient-metallic {
+      background: linear-gradient(180deg, #FFFFFF 0%, #CBD5E1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .text-gradient-brand {
+      background: linear-gradient(135deg, #F47C20 0%, #FF9E44 48%, #1BB8D8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .text-gradient-orange {
+      background: linear-gradient(90deg, #F47C20 0%, #FFA34E 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .btn-secondary {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: rgba(15, 22, 38, 0.65);
+      color: #E2E8F0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: -0.01em;
+      padding: 9px 16px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.11);
+      box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      text-decoration: none;
+    }
+    .btn-secondary:hover {
+      transform: translateY(-1px);
+      color: #FFFFFF;
+      background: rgba(27, 184, 216, 0.08);
+      border-color: rgba(27, 184, 216, 0.45);
+      box-shadow:
+        0 8px 24px -6px rgba(27, 184, 216, 0.22),
+        inset 0 1px 0 0 rgba(27, 184, 216, 0.2);
+    }
+
+    .eyebrow-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11.5px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 8px;
+      background: rgba(15, 22, 38, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.06);
+      color: #94A3B8;
+    }
+
+    .logo-badge {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #FFFFFF 0%, #F1F5F9 100%);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      flex-shrink: 0;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .group:hover .logo-badge {
+      transform: scale(1.03);
+      box-shadow: 0 0 16px rgba(244, 124, 32, 0.3);
+    }
+    .logo-badge img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 4px;
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #10B981;
+      box-shadow: 0 0 8px rgba(16, 185, 129, 0.8);
+      display: inline-block;
+    }
+
+    .hairline-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.08) 20%, rgba(244, 124, 32, 0.22) 50%, rgba(255, 255, 255, 0.08) 80%, transparent 100%);
+    }
+
+    .footer-link {
+      color: #64748B;
+      font-size: 13.5px;
+      transition: color 0.2s ease;
+      text-decoration: none;
+    }
+    .footer-link:hover {
+      color: #F8FAFC;
+    }
+
+    .legal-section-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 600;
+      min-width: 32px;
+      height: 28px;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      background: rgba(244, 124, 32, 0.12);
+      border: 1px solid rgba(244, 124, 32, 0.3);
+      color: #FF9E44;
+    }
+  </style>
+</head>
+
+<body class="antialiased selection:bg-brand-orange/30 selection:text-white">
+
+  <!-- MINIMALIST FLOATING CAPSULE NAVBAR -->
+  <header id="navbar" class="fixed top-4 left-0 right-0 z-50 px-4 sm:px-6" role="banner">
+    <nav class="nav-capsule max-w-5xl mx-auto rounded-2xl px-4 sm:px-6 py-3" role="navigation" aria-label="Navegación legal">
+      <div class="flex items-center justify-between gap-4">
+        <!-- Brand Identity -->
+        <a href="/" class="flex items-center gap-3 group no-underline" aria-label="Kptar App - Volver al inicio">
+          <div class="logo-badge">
+            <img src="assets/kptar-logo.png" alt="Kptar App C.A." onerror="this.style.display='none';this.parentElement.innerHTML='<span style=\'font-family:Outfit;font-weight:900;color:#F47C20;font-size:18px;\'>K</span>';" />
+          </div>
+          <div class="flex flex-col">
+            <div class="font-outfit font-bold text-white text-lg leading-none tracking-tight">
+              kptar<span class="text-gradient-orange">app</span>
+            </div>
+            <div class="font-mono text-[10px] text-slate-400 tracking-wider uppercase mt-1">
+              Software Engineering · C.A.
+            </div>
+          </div>
+        </a>
+
+        <!-- Back to Home Action -->
+        <a href="/" class="btn-secondary">
+          <svg class="w-4 h-4 text-brand-cyan" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m15 18-6-6 6-6"/>
+          </svg>
+          <span>Volver al Inicio</span>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MAIN LEGAL DOCUMENT SECTION -->
+  <main class="relative min-h-screen legal-surface pt-32 pb-24 px-4 sm:px-6">
+    <div class="absolute inset-0 bg-grid-pattern pointer-events-none" aria-hidden="true"></div>
+
+    <div class="relative z-10 max-w-4xl mx-auto">
+      <!-- Document Header -->
+      <div class="mb-10">
+        <div class="mb-4">
+          <span class="eyebrow-badge">
+            <span class="status-dot !w-1.5 !h-1.5"></span>
+            DOCUMENTO LEGAL OFICIAL · CUMPLIMIENTO META PLATFORMS &amp; SAAS
+          </span>
+        </div>
+
+        <h1 class="display-heading font-extrabold text-white leading-tight mb-3" style="font-size: clamp(1.85rem, 4vw, 2.75rem);">
+          POLÍTICA DE PRIVACIDAD DE <span class="text-gradient-brand">KPTAR APP C.A.</span>
+        </h1>
+
+        <div class="flex flex-wrap items-center gap-3 font-mono text-xs text-slate-400">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-obsidian-800 border border-white/[0.07] text-brand-orangeLight">
+            Última actualización: Octubre de 2026
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-obsidian-800 border border-white/[0.07] text-slate-300">
+            RIF: J-50324674-0
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-obsidian-800 border border-white/[0.07] text-brand-cyanLight">
+            Plataforma: Kptar Business
+          </span>
+        </div>
+      </div>
+
+      <!-- Legal Body Container -->
+      <article class="surface-card rounded-2xl p-6 sm:p-10 md:p-12 space-y-10 text-slate-300 leading-relaxed">
+
+        <!-- Introductory Declaration -->
+        <div class="p-5 sm:p-6 rounded-xl bg-obsidian-900/90 border border-white/[0.07] text-sm sm:text-base leading-relaxed text-slate-200">
+          <strong class="text-white font-semibold">Kptar App C.A. (RIF: J-50324674-0)</strong>, con domicilio en Calle 72 con Av. Bella Vista, Edif. Clodomira, Piso 2, Of. 302, Maracaibo, Zulia, Venezuela, garantiza la protección y confidencialidad de los datos personales y comerciales suministrados por los usuarios y clientes de su plataforma de servicios SaaS multitenant <strong class="text-brand-cyanLight font-semibold">"Kptar Business"</strong>.
+        </div>
+
+        <!-- Section 1 -->
+        <section aria-labelledby="sec-1" class="space-y-4">
+          <div class="flex items-center gap-3 border-b border-white/[0.07] pb-3">
+            <span class="legal-section-badge">01</span>
+            <h2 id="sec-1" class="font-outfit font-bold text-white text-lg sm:text-xl tracking-tight">
+              1. DATOS QUE RECOPILAMOS A TRAVÉS DE METAS PLATFORMS
+            </h2>
+          </div>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            Para la integración y funcionamiento con la API de WhatsApp Business, Instagram Graph API y Messenger, Kptar Business procesa únicamente los datos estrictamente necesarios autorizados expresamente por el cliente:
+          </p>
+          <ul class="space-y-3 pl-1">
+            <li class="flex items-start gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-brand-orange mt-2.5 flex-shrink-0"></span>
+              <span class="text-slate-300 text-sm sm:text-base">Identificadores de usuario (IDs de WhatsApp, Instagram scoped IDs).</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-brand-orange mt-2.5 flex-shrink-0"></span>
+              <span class="text-slate-300 text-sm sm:text-base">Metadatos de mensajería comercial (números de teléfono empresarial, marcas de tiempo, estados de entrega y lectura).</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-brand-orange mt-2.5 flex-shrink-0"></span>
+              <span class="text-slate-300 text-sm sm:text-base">Contenido de mensajes entrantes y salientes para la sincronización de bandejas de entrada compartidas y flujos de automatización autorizados.</span>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Section 2 -->
+        <section aria-labelledby="sec-2" class="space-y-4">
+          <div class="flex items-center gap-3 border-b border-white/[0.07] pb-3">
+            <span class="legal-section-badge" style="background: rgba(27, 184, 216, 0.12); border-color: rgba(27, 184, 216, 0.3); color: #5CE1FF;">02</span>
+            <h2 id="sec-2" class="font-outfit font-bold text-white text-lg sm:text-xl tracking-tight">
+              2. FINALIDAD DEL TRATAMIENTO DE DATOS
+            </h2>
+          </div>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            Los datos se utilizan única y exclusivamente para:
+          </p>
+          <ul class="space-y-3 pl-1">
+            <li class="flex items-start gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-brand-cyan mt-2.5 flex-shrink-0"></span>
+              <span class="text-slate-300 text-sm sm:text-base">Centralizar la comunicación comercial y atención al cliente en la plataforma SaaS.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-brand-cyan mt-2.5 flex-shrink-0"></span>
+              <span class="text-slate-300 text-sm sm:text-base">Ejecutar flujos de respuestas automatizadas a través de agentes virtuales y operadores humanos del negocio suscriptor.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-brand-cyan mt-2.5 flex-shrink-0"></span>
+              <span class="text-slate-300 text-sm sm:text-base">Generar métricas operativas de rendimiento de atención en tiempo real.</span>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Section 3 -->
+        <section aria-labelledby="sec-3" class="space-y-4">
+          <div class="flex items-center gap-3 border-b border-white/[0.07] pb-3">
+            <span class="legal-section-badge">03</span>
+            <h2 id="sec-3" class="font-outfit font-bold text-white text-lg sm:text-xl tracking-tight">
+              3. SEGURIDAD, ALMACENAMIENTO Y AISLAMIENTO DE DATOS
+            </h2>
+          </div>
+          <ul class="space-y-3.5 pl-1">
+            <li class="flex items-start gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-brand-orange mt-2.5 flex-shrink-0"></span>
+              <span class="text-slate-300 text-sm sm:text-base">
+                <strong class="text-white font-semibold">Aislamiento Multitenant:</strong> Todos los datos residen en bases de datos con políticas de seguridad a nivel de fila (Row Level Security - RLS), impidiendo cualquier cruce de datos entre diferentes empresas o clientes.
+              </span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-brand-orange mt-2.5 flex-shrink-0"></span>
+              <span class="text-slate-300 text-sm sm:text-base">
+                <strong class="text-white font-semibold">Cifrado:</strong> Las transferencias de datos se realizan bajo protocolos seguros HTTPS/TLS y los tokens de acceso se almacenan cifrados en reposo.
+              </span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-brand-orange mt-2.5 flex-shrink-0"></span>
+              <span class="text-slate-300 text-sm sm:text-base">
+                <strong class="text-white font-semibold">No Comercialización:</strong> Kptar App C.A. no vende, no alquila ni comparte datos personales o de mensajería con terceros.
+              </span>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Section 4 -->
+        <section aria-labelledby="sec-4" class="space-y-4">
+          <div class="flex items-center gap-3 border-b border-white/[0.07] pb-3">
+            <span class="legal-section-badge" style="background: rgba(27, 184, 216, 0.12); border-color: rgba(27, 184, 216, 0.3); color: #5CE1FF;">04</span>
+            <h2 id="sec-4" class="font-outfit font-bold text-white text-lg sm:text-xl tracking-tight">
+              4. POLÍTICA DE RETENCIÓN Y ELIMINACIÓN DE DATOS
+            </h2>
+          </div>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            Los datos se conservan únicamente mientras el cliente mantenga activa su suscripción al servicio. Los clientes y usuarios pueden solicitar en cualquier momento la revocación del acceso a las APIs o la eliminación total de sus registros enviando un correo a <a href="mailto:info@kptar.com" class="text-brand-orangeLight font-mono hover:underline">info@kptar.com</a> o contactando vía WhatsApp al <a href="https://wa.me/584146883105" target="_blank" rel="noopener noreferrer" class="text-[#25D366] font-mono hover:underline">+58 414-688-3105</a>.
+          </p>
+        </section>
+
+        <!-- Corporate Verification Footer Box inside Card -->
+        <div class="pt-6 border-t border-white/[0.08] flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-xs font-mono text-slate-400">
+          <div>
+            ENTIDAD RESPONSABLE: <strong class="text-white">KPTAR APP C.A.</strong> · RIF: <strong class="text-brand-cyanLight">J-50324674-0</strong>
+          </div>
+          <div class="flex items-center gap-4">
+            <a href="mailto:info@kptar.com" class="text-brand-orangeLight hover:underline">info@kptar.com</a>
+            <span>·</span>
+            <a href="https://wa.me/584146883105" target="_blank" rel="noopener noreferrer" class="text-[#25D366] hover:underline">+58 414-688-3105</a>
+          </div>
+        </div>
+
+      </article>
+    </div>
+  </main>
+
+  <div class="hairline-divider"></div>
+
+  <!-- INSTITUTIONAL FOOTER -->
+  <footer class="py-16 px-6 bg-obsidian-950" role="contentinfo">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid md:grid-cols-12 gap-10 pb-12 border-b border-white/[0.06]">
+        <!-- Brand & Fiscal Summary -->
+        <div class="md:col-span-6">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="logo-badge">
+              <img src="assets/kptar-logo.png" alt="Kptar App C.A." onerror="this.style.display='none';this.parentElement.innerHTML='<span style=\'font-family:Outfit;font-weight:900;color:#F47C20;font-size:18px;\'>K</span>';" />
+            </div>
+            <div>
+              <div class="font-outfit font-bold text-white text-lg leading-none">kptar<span class="text-gradient-orange">app</span></div>
+              <div class="font-mono text-[10px] text-slate-500 uppercase tracking-wider mt-1">Kptar App C.A. — Software Engineering</div>
+            </div>
+          </div>
+
+          <p class="text-slate-400 text-sm leading-relaxed mb-6 max-w-md">
+            Empresa de tecnología y consultora de ingeniería de software de alto nivel. Diseñamos, desarrollamos y escalamos plataformas SaaS multitenant, aplicaciones móviles nativas y soluciones con IA.
+          </p>
+
+          <div class="space-y-2 font-mono text-xs text-slate-400">
+            <div class="flex items-center gap-2.5">
+              <svg class="w-3.5 h-3.5 text-brand-cyan flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Calle 72 con Av. Bella Vista, Edif. Clodomira, Piso 2 · Of. 302 — Maracaibo, Zulia</span>
+            </div>
+            <div class="flex items-center gap-2.5">
+              <svg class="w-3.5 h-3.5 text-brand-orange flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><line x1="7" y1="8" x2="17" y2="8"/><line x1="7" y1="12" x2="13" y2="12"/></svg>
+              <span>RIF: <strong class="text-slate-200 font-semibold">J-50324674-0</strong></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Portfolio Links -->
+        <div class="md:col-span-3">
+          <h4 class="font-mono text-xs font-semibold text-white uppercase tracking-wider mb-4">Casos de Estudio</h4>
+          <ul class="space-y-2.5">
+            <li><a href="/#ecosistema" class="footer-link">Jurídico HC</a></li>
+            <li><a href="/#ecosistema" class="footer-link">Kptar Business</a></li>
+            <li><a href="/#ecosistema" class="footer-link">Safe School</a></li>
+            <li><a href="/#ecosistema" class="footer-link">Condominios</a></li>
+            <li><a href="/#ecosistema" class="footer-link">Alas Viw</a></li>
+          </ul>
+        </div>
+
+        <!-- Corporate & Legal Links -->
+        <div class="md:col-span-3">
+          <h4 class="font-mono text-xs font-semibold text-white uppercase tracking-wider mb-4">Servicios &amp; Legal</h4>
+          <ul class="space-y-2.5">
+            <li><a href="/#nosotros" class="footer-link">ADN de Ingeniería</a></li>
+            <li><a href="/#arquitectura" class="footer-link">Capacidades Técnicas</a></li>
+            <li><a href="/privacy" class="footer-link !text-brand-orangeLight font-medium">Política de Privacidad</a></li>
+            <li><a href="/terms" class="footer-link">Términos del Servicio</a></li>
+            <li><a href="mailto:info@kptar.com" class="footer-link font-mono text-xs">info@kptar.com</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Copyright Bar -->
+      <div class="pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-slate-500 text-xs text-center sm:text-left">
+          <span>
+            © 2024–2026 <strong class="text-slate-300 font-semibold">Kptar App C.A.</strong> — Todos los derechos reservados.
+          </span>
+          <span class="hidden sm:inline text-white/15" aria-hidden="true">|</span>
+          <div class="flex items-center gap-3">
+            <a href="/privacy" class="footer-link !text-xs !text-brand-orangeLight font-medium" aria-current="page">Política de Privacidad</a>
+            <span class="text-white/15" aria-hidden="true">·</span>
+            <a href="/terms" class="footer-link !text-xs text-slate-400 hover:text-white">Términos del Servicio</a>
+          </div>
+        </div>
+        <div class="flex items-center gap-3">
+          <span class="inline-flex items-center gap-2 font-mono text-[11px] px-3 py-1 rounded-md bg-obsidian-800 border border-white/[0.07] text-slate-300">
+            <span class="status-dot !w-1.5 !h-1.5"></span>
+            INGENIERÍA VENEZOLANA · ALCANCE LATAM
+          </span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
